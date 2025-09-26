@@ -16,7 +16,7 @@ const skills = [
   // Frameworks & Technologies
   { name: "React Native", level: 80, category: "Frameworks & Technologies" },
   { name: "ReactJS", level: 80, category: "Frameworks & Technologies" },
-  { name: "ExpressJS", level: 80, category: "Frameworks & Technologies" },
+  { name: "ExpressJS", level: 70, category: "Frameworks & Technologies" },
   { name: "Tailwind CSS", level: 80, category: "Frameworks & Technologies" },
   { name: "Laravel", level: 85, category: "Frameworks & Technologies" },
   { name: "Machine Learning", level: 88, category: "Frameworks & Technologies" },
@@ -46,7 +46,7 @@ const skills = [
 
 ];
 
-const categories = ["all", "Programming Languages & Databases", "Framework & Technologies", "Tools", "Soft Skills"];
+const categories = ["all", "Programming Languages & Databases", "Frameworks & Technologies", "Tools", "Soft Skills"];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");

@@ -38,15 +38,13 @@ export const ContactSection = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* KOLOM KIRI: INFORMASI KONTAK */}
-          <div className="space-y-8 text-center md:text-left"> {/* Menambahkan text-center untuk mobile */}
-            <h3 className="text-2xl font-semibold"> {/* Dihapus: mb-6 karena sudah ada space-y-8 */}
+          <div className="space-y-8 text-center md:text-left"> 
+            <h3 className="text-2xl font-semibold"> 
               Contact Information
             </h3>
 
-            <div className="space-y-6 flex flex-col items-center md:items-start"> {/* DIUBAH: Agar container ini bisa menengahkan itemnya di mobile */}
-              {/* Item Email */}
-              <div className="flex items-center space-x-4"> {/* <-- DIUBAH: dari items-start */}
+            <div className="space-y-6 flex flex-col items-center md:items-start"> 
+              <div className="flex items-center space-x-4"> 
                 <div className="p-3 rounded-full bg-primary/10">
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
@@ -61,10 +59,9 @@ export const ContactSection = () => {
                 </div>
               </div>
 
-              {/* Item Telepon */}
-              <div className="flex items-center space-x-4"> {/* <-- DIUBAH: dari items-start */}
+              <div className="flex items-center space-x-4"> 
                 <div className="p-3 rounded-full bg-primary/10">
-                  <Phone className="h-6 w-6 text-primary" /> {/* <-- DIUBAH: Class tidak perlu dihapus */}
+                  <Phone className="h-6 w-6 text-primary" /> 
                 </div>
                 <div>
                   <h4 className="font-medium">Phone</h4>
@@ -77,10 +74,10 @@ export const ContactSection = () => {
                 </div>
               </div>
               
-              {/* Item Lokasi (STRUKTUR DIPERBAIKI AGAR KONSISTEN) */}
-              <div className="flex items-center space-x-4"> {/* <-- DIUBAH: dari items-start */}
+              
+              <div className="flex items-center space-x-4"> 
                 <div className="p-3 rounded-full bg-primary/10">
-                  <MapPin className="h-6 w-6 text-primary" /> {/* <-- DITAMBAHKAN */}
+                  <MapPin className="h-6 w-6 text-primary" /> 
                 </div>
                 <div>
                   <h4 className="font-medium">Location</h4>
@@ -93,7 +90,7 @@ export const ContactSection = () => {
 
             <div className="pt-8">
               <h4 className="font-medium mb-4">Connect With Me</h4>
-              <div className="flex space-x-4 justify-center md:justify-start"> {/* DIUBAH: Agar rata kiri di desktop */}
+              <div className="flex space-x-4 justify-center md:justify-start"> 
                 <a href="https://www.linkedin.com/in/rizky-fadhilah123/" target="_blank" rel="noopener noreferrer">
                   <Linkedin className="h-7 w-7 text-muted-foreground hover:text-primary"/>
                 </a>
@@ -104,13 +101,12 @@ export const ContactSection = () => {
             </div>
           </div>
 
-          {/* KOLOM KANAN: FORM */}
           <div
             className="bg-card p-8 rounded-lg shadow-xs"
           >
             <h3 className="text-2xl font-semibold mb-6 text-left"> Send a Message</h3>
             <form className="space-y-6" onSubmit={handleSubmit}>
-              {/* ... sisa form Anda tidak perlu diubah ... */}
+             
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2 text-left">
                   Your Name
@@ -121,7 +117,7 @@ export const ContactSection = () => {
                   name="name"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
-                  placeholder="Rizky Fadhilah..."
+                  placeholder="Your Name..."
                 />
               </div>
               <div>
@@ -134,7 +130,7 @@ export const ContactSection = () => {
                   name="email"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
-                  placeholder="rizkifadhilah123@gmail.com"
+                  placeholder="Your Email..."
                 />
               </div>
               <div>

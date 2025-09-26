@@ -31,16 +31,15 @@ export const Navbar = () => {
     >
       <div className="container flex items-center justify-between">
         <a
-          className="text-xl font-bold text-primary flex items-center"
           href="#hero"
+          className="flex items-center" 
         >
-          <span className="relative z-10">
-            <span className="text-glow text-foreground"> Rizky Fadhilah </span>{" "}
-            Portfolio
+          <span className="relative z-13 font-bold text-2xl">
+            <span className="text-glow text-foreground">rizkyyfadhilah</span>{" "}
+            *
           </span>
         </a>
 
-        {/* desktop nav */}
         <div className="hidden md:flex space-x-8">
           {navItems.map((item, key) => (
             <a
@@ -52,8 +51,6 @@ export const Navbar = () => {
             </a>
           ))}
         </div>
-
-        {/* mobile nav */}
 
         <button
           onClick={() => setIsMenuOpen((prev) => !prev)}

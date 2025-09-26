@@ -1,4 +1,4 @@
-import { Briefcase, Code, User } from "lucide-react";
+import { BrainCircuit, BarChartBig, Database, Layout } from "lucide-react";
 
 export const AboutSection = () => {
   return (
@@ -16,16 +16,12 @@ export const AboutSection = () => {
             </h3>
 
             <p className="text-muted-foreground">
-              With over 5 years of experience in web development, I specialize
-              in creating responsive, accessible, and performant web
-              applications using modern technologies.
+              As a Computer Science student with a strong focus on data, I thrive on transforming complex datasets into clear, actionable solutions. My dedication to this field is demonstrated by my active participation in data science competitions, including a first-place win that showcased my abilities in predictive analytics and problem-solving.
             </p>
 
             <p className="text-muted-foreground">
-              I'm passionate about creating elegant solutions to complex
-              problems, and I'm constantly learning new technologies and
-              techniques to stay at the forefront of the ever-evolving web
-              landscape.
+              I am proficient in the end-to-end data science lifecycle—from exploratory analysis to model deployment. I am actively seeking an opportunity where I can contribute my skills in problem-solving, analytics, and software development. 
+              My goal is to grow as a well-rounded technology professional within an innovative company.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -43,51 +39,69 @@ export const AboutSection = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-6">
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Code className="h-6 w-6 text-primary" />
-                </div>
-                <div className="text-left">
-                  <h4 className="font-semibold text-lg"> Web Development</h4>
-                  <p className="text-muted-foreground">
-                    Creating responsive websites and web applications with
-                    modern frameworks.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <User className="h-6 w-6 text-primary" />
-                </div>
-                <div className="text-left">
-                  <h4 className="font-semibold text-lg">UI/UX Design</h4>
-                  <p className="text-muted-foreground">
-                    Designing intuitive user interfaces and seamless user
-                    experiences.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Briefcase className="h-6 w-6 text-primary" />
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                <div className="text-left">
-                  <h4 className="font-semibold text-lg">Project Management</h4>
-                  <p className="text-muted-foreground">
-                    Leading projects from conception to completion with agile
-                    methodologies.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+  {/* Kartu 1: Data Science */}
+  <div className="gradient-border p-6 card-hover">
+    <div className="flex flex-col items-center gap-4">
+      <div className="p-3 rounded-full bg-primary/10">
+        <BrainCircuit className="h-6 w-6 text-primary" />
+      </div>
+      <div className="text-center">
+        <h4 className="font-semibold text-lg">Data Science</h4>
+        <p className="text-muted-foreground">
+          Building and deploying machine learning models to solve real-world problems.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {/* Kartu 2: Data Analytics */}
+  <div className="gradient-border p-6 card-hover">
+    <div className="flex flex-col items-center gap-4">
+      <div className="p-3 rounded-full bg-primary/10">
+        <BarChartBig className="h-6 w-6 text-primary" />
+      </div>
+      <div className="text-center">
+        <h4 className="font-semibold text-lg">Data Analytics</h4>
+        <p className="text-muted-foreground">
+          Analyzing complex datasets to extract insights and inform decision-making.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {/* Kartu 3: Data Engineer */}
+  <div className="gradient-border p-6 card-hover">
+    <div className="flex flex-col items-center gap-4">
+      <div className="p-3 rounded-full bg-primary/10">
+        <Database className="h-6 w-6 text-primary" />
+      </div>
+      <div className="text-center">
+        <h4 className="font-semibold text-lg">Data Engineer</h4>
+        <p className="text-muted-foreground">
+          Designing and maintaining data pipelines to ensure data quality and accessibility.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  {/* Kartu 4: Web Development */}
+  <div className="gradient-border p-6 card-hover">
+    <div className="flex flex-col items-center gap-4">
+      <div className="p-3 rounded-full bg-primary/10">
+        <Layout className="h-6 w-6 text-primary" />
+      </div>
+      <div className="text-center">
+        <h4 className="font-semibold text-lg">Web Development</h4>
+        <p className="text-muted-foreground">
+          Creating responsive interfaces to visualize data and interact with models.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+</div>
         </div>
       </div>
     </section>

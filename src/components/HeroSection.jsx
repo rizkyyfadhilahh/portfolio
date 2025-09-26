@@ -13,11 +13,11 @@ export const HeroSection = () => {
             <span className="opacity-0 animate-fade-in"> Hi, I'm</span>
             <span className="text-primary opacity-0 animate-fade-in-delay-1">
               {" "}
-              Rizky
+              Rizky Fadhilah
             </span>
             <span className="text-gradient ml-2 opacity-0 animate-fade-in-delay-2">
               {" "}
-              Fadhilah
+               
             </span>
           </h1>
 
@@ -33,10 +33,12 @@ export const HeroSection = () => {
         </div>
 
         <div className="flex justify-center items-center opacity-0 animate-fade-in-delay-4">
-          <div className="w-80 h-80 md:w-96 md:h-96 rounded-3xl object-cover shadow-lg flex items-center justify-center">
-            <span className="text-muted-foreground">Your Photo Here</span>
-          </div>
-        </div>
+          <img 
+            src="src/photo/MyPhoto.jpg" 
+            alt="Foto Rizky Fadhilah"       
+            className="w-80 h-80 md:w-96 md:h-96 rounded-3xl object-cover shadow-lg"
+            />
+      </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
