@@ -1,11 +1,4 @@
-import {
-  Instagram,
-  Linkedin,
-  Mail,
-  Phone,
-  Send,
-  MapPin, // <-- DITAMBAHKAN: Ikon untuk lokasi
-} from "lucide-react";
+import { Instagram, Linkedin, Mail, Phone, Send, MapPin, Github} from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
@@ -96,6 +89,9 @@ export const ContactSection = () => {
                 </a>
                 <a href="https://www.instagram.com/rizkyyfadhilah/" target="_blank" rel="noopener noreferrer">
                   <Instagram className="h-7 w-7 text-muted-foreground hover:text-primary"/>
+                </a>
+                <a href="https://github.com/rizkyyfadhilahh" target="_blank" rel="noopener noreferrer">
+                  <Github className="h-7 w-7 text-muted-foreground hover:text-primary"/>
                 </a>
               </div>
             </div>
