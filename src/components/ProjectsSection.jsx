@@ -8,7 +8,7 @@ const projects = [
     image: "/projects/project1.png",
     tags: ["React", "TailwindCSS", "Supabase"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/rizkyyfadhilahh",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const projects = [
     image: "/projects/project1.png",
     tags: ["React", "TailwindCSS", "Supabase"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/rizkyyfadhilahh",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const projects = [
     image: "/projects/project1.png",
     tags: ["React", "TailwindCSS", "Supabase"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/rizkyyfadhilahh",
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ const projects = [
     image: "/projects/project1.png",
     tags: ["React", "TailwindCSS", "Supabase"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/rizkyyfadhilahh",
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ const projects = [
     image: "/projects/project1.png",
     tags: ["React", "TailwindCSS", "Supabase"],
     demoUrl: "#",
-    githubUrl: "#",
+    githubUrl: "https://github.com/rizkyyfadhilahh",
   },
 
 ];
