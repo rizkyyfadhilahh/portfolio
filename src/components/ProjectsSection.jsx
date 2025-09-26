@@ -3,48 +3,53 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "Project 1",
+    title: "NLP based Regression-for Predicting Incarceration-Duration from Court Transcripts",
     description: "Description for Project 1",
     image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "https://github.com/rizkyyfadhilahh",
+    tags: ["Python", , "Machine Learning", "Natural Language Processing", "Deep Learning","Regression"],
+    githubUrl: "https://github.com/rizkyyfadhilahh/NLP-based-Regression-for-Predicting-Incarceration-Duration-from-Court-Transcripts",
   },
   {
     id: 2,
-    title: "Project 2",
-    description: "Description for Project 2",
-    image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "https://github.com/rizkyyfadhilahh",
+    title: "Multi-Modal Machine Learning for Printed Circuit Boards Defect Detection",
+    description: "Multi-Modal AI for PCB Defect Detection A national data science competition project that achieved 28th place out of 210+ teams. As the Computer Vision specialist, I developed a deep learning model to visually classify manufacturing defects.",
+    image: "src/photo/PCB_Defect.png",
+    tags: ["Python", , "Machine Learning", "Deep Learning", "Computer Vision", "Classification"],
+    githubUrl: "https://github.com/rizkyyfadhilahh/Multi-Modal-Machine-Learning-for-Printed-Circuit-Boards-Defect-Detection",
   },
   {
     id: 3,
-    title: "Project 3",
-    description: "Description for Project 3",
-    image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "https://github.com/rizkyyfadhilahh",
+    title: "Battery Remaining Useful Life Prediction",
+    description: "Desc.",
+    image: "",
+    tags: ["Python", "Machine Learning", "Regression"],
+    githubUrl: "https://github.com/rizkyyfadhilahh/Battery_RemainingUseLife_Prediction",
   },
   {
     id: 4,
-    title: "Project 4",
+    title: "ablecareers",
     description: "Description for Project 4",
-    image: "/projects/project1.png",
+    image: "src/photo/ablecareers.png",
     tags: ["React", "TailwindCSS", "Supabase"],
     demoUrl: "#",
     githubUrl: "https://github.com/rizkyyfadhilahh",
   },
   {
     id: 5,
-    title: "Project 5",
+    title: "TukangIN",
     description: "Description for Project 5",
-    image: "/projects/project1.png",
+    image: "src/photo/TukangIN.png",
     tags: ["React", "TailwindCSS", "Supabase"],
     demoUrl: "#",
     githubUrl: "https://github.com/rizkyyfadhilahh",
+  },
+  {
+    id: 6,
+    title: "Recipfy",
+    description: "Recipfy, an intuitive mobile recipe application, independently designed and developed using React Native. Inspired by a previous machine learning project, this app serves as the foundation for a future smart recipe platform.",
+    image: "src/photo/recipfy.png",
+    tags: ["React Native", "Expo"],
+    githubUrl: "https://github.com/rizkyyfadhilahh/recipfy",
   },
 
 ];
@@ -55,7 +60,7 @@ export const ProjectsSection = () => {
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
           {" "}
-          Featured <span className="text-primary"> Projects </span>
+          Recent <span className="text-primary"> Projects </span>
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">

@@ -32,9 +32,8 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        {/* --- Kolom 2: Foto Anda --- */}
         <div className="flex justify-center items-center opacity-0 animate-fade-in-delay-4">
-          <div className="w-80 h-80 md:w-96 md:h-96 bg-primary/10 rounded-full shadow-lg flex items-center justify-center">
+          <div className="w-80 h-80 md:w-96 md:h-96 rounded-3xl object-cover shadow-lg flex items-center justify-center">
             <span className="text-muted-foreground">Your Photo Here</span>
           </div>
         </div>
