@@ -34,7 +34,7 @@ export const HeroSection = () => {
 
         <div className="flex justify-center items-center opacity-0 animate-fade-in-delay-4">
           <img 
-            src="src/photo/MyPhoto.jpg" 
+            src="/photo/MyPhoto.jpg" 
             alt="Foto Rizky Fadhilah"       
             className="w-80 h-80 md:w-96 md:h-96 rounded-3xl object-cover shadow-lg"
             />
