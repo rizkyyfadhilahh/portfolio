@@ -1,11 +1,11 @@
-import { ArrowDown } from "lucide-react";
+import { Instagram, Linkedin, Mail, Phone, Send, MapPin, Github, ArrowDown, FileText} from "lucide-react";
 
 export const HeroSection = () => {
   return (
     <section
-      id="hero"
-      className="relative min-h-screen flex items-center justify-center px-4" 
-    >
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center px-4 pt-25" 
+    >
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center z-10">
         
         <div className="space-y-6 text-center md:text-left">
@@ -26,9 +26,44 @@ export const HeroSection = () => {
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
-            <a href="#projects" className="cosmic-button">
-              View My Work
-            </a>
+            <div className="flex items-center gap-4">
+                <a
+                  href="https://www.linkedin.com/in/rizky-fadhilah123/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn Profile"
+                >
+                  <Linkedin className="h-7 w-7 text-muted-foreground hover:text-primary transition-colors" />
+                </a>
+
+                <a
+                  href="https://www.instagram.com/rizkyyfadhilah/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram Profile"
+                >
+                  <Instagram className="h-7 w-7 text-muted-foreground hover:text-primary transition-colors" />
+                </a>
+
+                <a
+                  href="https://github.com/rizkyyfadhilahh"
+                  target="_blank"
+                  rel="noopener noreferrer"
+        _         aria-label="GitHub Profile"
+                >
+                  <Github className="h-7 w-7 text-muted-foreground hover:text-primary transition-colors" />
+                </a>
+
+                <a
+                  href="https://drive.google.com/file/d/1fEkscZjsG1Wjg51o6-Ege_FoCak8k0CD/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View CV"
+                >
+                  <FileText className="h-7 w-7 text-muted-foreground hover:text-primary transition-colors" />
+                </a>
+
+              </div>
           </div>
         </div>
 

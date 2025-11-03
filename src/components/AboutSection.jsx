@@ -31,7 +31,7 @@ export const AboutSection = () => {
               </a>
 
               <a
-                href="https://drive.google.com/file/d/1U7yKEy0dnP1EcxMf1roryg7slA0xeikG/view?usp=sharing"
+                href="https://drive.google.com/file/d/1fEkscZjsG1Wjg51o6-Ege_FoCak8k0CD/view?usp=sharing"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 Download CV
@@ -41,7 +41,7 @@ export const AboutSection = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-  {/* Kartu 1: Data Science */}
+  {/*Data Science */}
   <div className="gradient-border p-6 card-hover">
     <div className="flex flex-col items-center gap-4">
       <div className="p-3 rounded-full bg-primary/10">
@@ -56,7 +56,7 @@ export const AboutSection = () => {
     </div>
   </div>
 
-  {/* Kartu 2: Data Analytics */}
+  {/*Data Analytics*/}
   <div className="gradient-border p-6 card-hover">
     <div className="flex flex-col items-center gap-4">
       <div className="p-3 rounded-full bg-primary/10">
@@ -71,7 +71,7 @@ export const AboutSection = () => {
     </div>
   </div>
 
-  {/* Kartu 3: Data Engineer */}
+  {/*Data Engineer */}
   <div className="gradient-border p-6 card-hover">
     <div className="flex flex-col items-center gap-4">
       <div className="p-3 rounded-full bg-primary/10">
