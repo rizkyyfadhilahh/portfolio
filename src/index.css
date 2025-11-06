@@ -76,15 +76,15 @@
 
 @layer base {
   :root {
-    --background: 0 0 0%;
-    --foreground: 213 31% 91%;
+    --background: 0 0 100%;
+    --foreground: 213 31% 9%;
 
-    --card: 222 47% 8%;
+    --card: 0 0 98%;
 
-    --primary: 250 65% 65%;
+    --primary: 250 65% 55%;
     --primary-foreground: 213 31% 91%;
 
-    --border: 217 33% 20%;
+    --border: 217 33% 90%;
   }
 
   .dark {
@@ -107,20 +107,15 @@
     @apply scroll-smooth;
   }
 
-body {
+  body {
     @apply text-foreground transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
-
-    /* 1. Warna dasar (hitam pekat) */
-    background-color: hsl(var(--background)); /* hsl(0 0% 0%) */
-
-    /* 2. Latar Belakang Pola Titik */
-    background-image:
-      /* Titik abu-abu muda (dari --foreground) dengan opacity 15% */
-      radial-gradient(hsl(var(--foreground) / 0.15) 1px, transparent 1px);
-
-    /* 3. Ukuran/Jarak antar titik (Anda bisa ubah 1.75rem jika mau) */
-    background-size: 1.75rem 1.75rem; 
+    background-color: hsl(var(--background));
+    background-image: radial-gradient(
+      hsl(var(--foreground) / 0.15) 1px,
+      transparent 1px
+    );
+    background-size: 1.75rem 1.75rem;
   }
 }
 
