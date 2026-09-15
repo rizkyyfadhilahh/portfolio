@@ -1,107 +1,98 @@
 import { BrainCircuit, BarChartBig, Database, Layout } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Reveal, StaggerContainer, StaggerItem } from "@/components/motion/Reveal";
+
+const focusAreas = [
+  {
+    icon: BrainCircuit,
+    title: "Data Science",
+    description:
+      "Building and deploying machine learning models to solve real-world problems.",
+  },
+  {
+    icon: BarChartBig,
+    title: "Data Analytics",
+    description:
+      "Analyzing complex datasets to extract insights and inform decision-making.",
+  },
+  {
+    icon: Database,
+    title: "Data Engineering",
+    description:
+      "Designing and maintaining data pipelines to ensure data quality and accessibility.",
+  },
+  {
+    icon: Layout,
+    title: "Web Development",
+    description:
+      "Creating responsive interfaces to visualize data and interact with models.",
+  },
+];
 
 export const AboutSection = () => {
   return (
     <section id="about" className="py-24 px-4 relative">
-      {" "}
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          About <span className="text-primary"> Me</span>
-        </h2>
+        <Reveal className="text-center">
+          <p className="section-label mb-3">About</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-12">
+            Focused on data, comfortable end-to-end
+          </h2>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
+          <Reveal y={16} className="space-y-6">
             <h3 className="text-2xl font-semibold">
-              Passionate about Data Science, Machine Learning, and Data Visualization
+              Data science, machine learning, and the products around them
             </h3>
 
             <p className="text-muted-foreground">
-              As a Computer Science student with a strong focus on data, I thrive on transforming complex datasets into clear, actionable solutions. My dedication to this field is demonstrated by my active participation in data science competitions, including a first-place win that showcased my abilities in predictive analytics and problem-solving.
+              As a Computer Science student with a strong focus on data, I
+              thrive on transforming complex datasets into clear, actionable
+              solutions. My dedication to this field is demonstrated by
+              active participation in data science competitions, including a
+              first-place national win in predictive analytics.
             </p>
 
             <p className="text-muted-foreground">
-              I am proficient in the end-to-end data science lifecycle—from exploratory analysis to model deployment. I am actively seeking an opportunity where I can contribute my skills in problem-solving, analytics, and software development. 
-              My goal is to grow as a well-rounded technology professional within an innovative company.
+              I'm proficient across the end-to-end data science lifecycle —
+              from exploratory analysis to model deployment — and I'm
+              actively looking for a team where I can apply that in
+              production.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-              <a href="#contact" className="cosmic-button">
-                {" "}
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
+              <Link to="/contact" className="btn-primary">
                 Get In Touch
-              </a>
-
+              </Link>
               <a
                 href="https://drive.google.com/file/d/1fEkscZjsG1Wjg51o6-Ege_FoCak8k0CD/view?usp=sharing"
-                className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline"
               >
                 Download CV
               </a>
             </div>
-          </div>
+          </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-  {/*Data Science */}
-  <div className="gradient-border p-6 card-hover">
-    <div className="flex flex-col items-center gap-4">
-      <div className="p-3 rounded-full bg-primary/10">
-        <BrainCircuit className="h-6 w-6 text-primary" />
-      </div>
-      <div className="text-center">
-        <h4 className="font-semibold text-lg">Data Science</h4>
-        <p className="text-muted-foreground">
-          Building and deploying machine learning models to solve real-world problems.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  {/*Data Analytics*/}
-  <div className="gradient-border p-6 card-hover">
-    <div className="flex flex-col items-center gap-4">
-      <div className="p-3 rounded-full bg-primary/10">
-        <BarChartBig className="h-6 w-6 text-primary" />
-      </div>
-      <div className="text-center">
-        <h4 className="font-semibold text-lg">Data Analytics</h4>
-        <p className="text-muted-foreground">
-          Analyzing complex datasets to extract insights and inform decision-making.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  {/*Data Engineer */}
-  <div className="gradient-border p-6 card-hover">
-    <div className="flex flex-col items-center gap-4">
-      <div className="p-3 rounded-full bg-primary/10">
-        <Database className="h-6 w-6 text-primary" />
-      </div>
-      <div className="text-center">
-        <h4 className="font-semibold text-lg">Data Engineer</h4>
-        <p className="text-muted-foreground">
-          Designing and maintaining data pipelines to ensure data quality and accessibility.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  {/* Kartu 4: Web Development */}
-  <div className="gradient-border p-6 card-hover">
-    <div className="flex flex-col items-center gap-4">
-      <div className="p-3 rounded-full bg-primary/10">
-        <Layout className="h-6 w-6 text-primary" />
-      </div>
-      <div className="text-center">
-        <h4 className="font-semibold text-lg">Web Development</h4>
-        <p className="text-muted-foreground">
-          Creating responsive interfaces to visualize data and interact with models.
-        </p>
-      </div>
-    </div>
-  </div>
-  
-</div>
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {focusAreas.map((area) => {
+              const Icon = area.icon;
+              return (
+                <StaggerItem
+                  key={area.title}
+                  className="glass rounded-lg p-6 card-hover"
+                >
+                  <Icon className="h-5 w-5 text-primary mb-4" />
+                  <h4 className="font-semibold mb-1">{area.title}</h4>
+                  <p className="text-sm text-muted-foreground">
+                    {area.description}
+                  </p>
+                </StaggerItem>
+              );
+            })}
+          </StaggerContainer>
         </div>
       </div>
     </section>

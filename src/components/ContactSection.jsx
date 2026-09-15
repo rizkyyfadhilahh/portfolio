@@ -1,7 +1,9 @@
 import { Instagram, Linkedin, Mail, Phone, Send, MapPin, Github} from "lucide-react";
+import { motion as Motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import { Reveal } from "@/components/motion/Reveal";
 
 export const ContactSection = () => {
   const { toast } = useToast();
@@ -22,16 +24,19 @@ export const ContactSection = () => {
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Get In <span className="text-primary"> Touch</span>
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Have a project in mind or want to collaborate? Feel free to reach out.
-          I'm always open to discussing new opportunities.
-        </p>
+        <Reveal className="text-center">
+          <p className="section-label mb-3">Contact</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Get In Touch
+          </h2>
+          <p className="text-muted-foreground mb-12 max-w-2xl mx-auto">
+            Have a project in mind or want to collaborate? Feel free to reach out.
+            I'm always open to discussing new opportunities.
+          </p>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8 text-center md:text-left"> 
+          <Reveal y={16} className="space-y-8 text-center md:text-left">
             <h3 className="text-2xl font-semibold"> 
               Contact Information
             </h3>
@@ -74,8 +79,8 @@ export const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-medium">Location</h4>
-                  <p className="text-muted-foreground"> {/* Ubah dari <a> ke <p> */}
-                    South Tangerang, Indonesia
+                  <p className="text-muted-foreground">
+                    Jakarta, Indonesia
                   </p>
                 </div>
               </div>
@@ -95,11 +100,9 @@ export const ContactSection = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </Reveal>
 
-          <div
-            className="bg-card p-8 rounded-lg shadow-xs"
-          >
+          <Reveal y={16} delay={0.1} className="glass p-8 rounded-lg">
             <h3 className="text-2xl font-semibold mb-6 text-left"> Send a Message</h3>
             <form className="space-y-6" onSubmit={handleSubmit}>
              
@@ -142,18 +145,20 @@ export const ContactSection = () => {
                   placeholder="Hello, I'd like to talk about..."
                 />
               </div>
-              <button
+              <Motion.button
                 type="submit"
                 disabled={isSubmitting}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 className={cn(
-                  "cosmic-button w-full flex items-center justify-center gap-2"
+                  "btn-primary w-full flex items-center justify-center gap-2"
                 )}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
                 {!isSubmitting && <Send size={16} />}
-              </button>
+              </Motion.button>
             </form>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

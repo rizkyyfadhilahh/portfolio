@@ -2,101 +2,61 @@
 
 @theme {
   --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
+  --color-muted-foreground: hsl(var(--muted-foreground));
 
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-accent-2: hsl(var(--accent-2));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
 
   --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--foreground));
 
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
-  --animate-fade-in: fade-in 0.7s ease-out forwards;
-  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
-  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
-  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
-  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
-  --animate-meteor: meteor 5s linear infinite;
-
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  @keyframes pulse-subtle {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.8;
-    }
-  }
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  @keyframes meteor {
-    0% {
-      transform: rotate(215deg) translateX(0);
-      opacity: 1;
-    }
-    70% {
-      opacity: 1;
-    }
-    100% {
-      transform: rotate(215deg) translateX(-500px);
-      opacity: 0;
-    }
-  }
-}
-
-@keyframes subtle-gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 }
 
 @layer base {
   :root {
-    --background: 0 0 100%;
-    --foreground: 213 31% 9%;
+    --background: 220 30% 98%;
+    --foreground: 222 47% 9%;
 
-    --card: 0 0 98%;
+    --muted-foreground: 222 15% 40%;
 
-    --primary: 250 65% 55%;
-    --primary-foreground: 213 31% 91%;
+    --card: 0 0% 100%;
 
-    --border: 217 33% 90%;
+    --secondary: 220 20% 94%;
+    --secondary-foreground: 222 47% 9%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 100%;
+    --accent-2: 262 83% 58%;
+
+    --border: 220 20% 88%;
+    --input: 220 20% 84%;
   }
 
   .dark {
-    --background: 0 0 0%;
-    --foreground: 213 31% 91%;
+    --background: 230 35% 6%;
+    --foreground: 220 20% 96%;
 
-    --card: 222 47% 8%;
+    --muted-foreground: 220 10% 65%;
 
-    --primary: 250 65% 65%;
-    --primary-foreground: 213 31% 91%;
+    --card: 230 28% 11%;
 
-    --border: 217 33% 20%;
+    --secondary: 230 20% 15%;
+    --secondary-foreground: 220 20% 96%;
+
+    --primary: 199 89% 60%;
+    --primary-foreground: 0 0% 100%;
+    --accent-2: 262 83% 68%;
+
+    --border: 230 15% 22%;
+    --input: 230 15% 26%;
   }
 
   * {
@@ -111,11 +71,6 @@
     @apply text-foreground transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
     background-color: hsl(var(--background));
-    background-image: radial-gradient(
-      hsl(var(--foreground) / 0.15) 1px,
-      transparent 1px
-    );
-    background-size: 1.75rem 1.75rem;
   }
 }
 
@@ -140,36 +95,158 @@
   }
 }
 
-@utility text-glow {
-  @apply relative;
-  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
-}
-
 @utility card-hover {
-  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+  @apply transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_0_30px_-8px_hsl(var(--primary)/0.35)];
 }
 
-@utility gradient-border {
-  @apply relative rounded-md;
-  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
-  background-clip: padding-box;
-  border: 1px solid transparent;
+@utility glass {
+  @apply bg-card/60 backdrop-blur-xl border border-border/60;
 }
 
-@utility cosmic-button {
-  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium 
-         transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
-         hover:scale-105 active:scale-95;
+@utility section-label {
+  @apply font-mono text-xs font-medium tracking-[0.25em] uppercase text-primary;
 }
 
-@utility star {
-   @apply absolute rounded-full bg-green-400;
-   box-shadow: 0 0 10px 2px rgba(74, 222, 128, 0.4); 
+@utility gradient-text {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent-2)));
 }
 
-@utility meteor {
-  @apply absolute bg-gradient-to-r from-yellow-400 via-yellow-400 to-transparent rounded-full;
-  box-shadow: 0 0 10px 5px rgba(250, 204, 21, 0.3);
+@utility gradient-text-live {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(
+    90deg,
+    hsl(var(--primary)),
+    hsl(var(--accent-2)),
+    hsl(var(--primary))
+  );
+  background-size: 200% auto;
+  animation: gradient-shimmer 6s ease-in-out infinite;
+}
+
+@keyframes gradient-shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@utility btn-primary {
+  @apply px-6 py-3 rounded-lg text-primary-foreground font-medium
+         transition-all duration-300 hover:brightness-110 hover:-translate-y-0.5
+         active:scale-[0.98] active:translate-y-0;
+  background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent-2)));
+  box-shadow: 0 8px 24px -8px hsl(var(--primary) / 0.5);
+}
+
+@utility btn-outline {
+  @apply px-6 py-3 rounded-lg border border-border text-foreground font-medium
+         transition-all duration-300 hover:border-primary hover:text-primary
+         hover:shadow-[0_0_24px_-6px_hsl(var(--primary)/0.4)] active:scale-[0.98];
+}
+
+@utility bg-grid {
+  background-image: linear-gradient(hsl(var(--primary) / 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--primary) / 0.14) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 25%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 25%, transparent 100%);
+}
+
+@utility blob {
+  @apply absolute rounded-full pointer-events-none;
+  filter: blur(100px);
+}
+
+@utility bg-aurora-wash {
+  background-image: radial-gradient(38% 34% at 10% 12%, hsl(var(--primary) / 0.16), transparent 62%),
+    radial-gradient(34% 30% at 92% 8%, hsl(var(--accent-2) / 0.14), transparent 62%),
+    radial-gradient(42% 38% at 20% 92%, hsl(var(--accent-2) / 0.12), transparent 62%),
+    radial-gradient(38% 34% at 88% 88%, hsl(var(--primary) / 0.13), transparent 62%);
+  background-repeat: no-repeat;
+  background-size: 160% 160%;
+  animation: aurora-drift 26s ease-in-out infinite;
+}
+
+@keyframes aurora-drift {
+  0%,
+  100% {
+    background-position: 0% 0%, 100% 0%, 0% 100%, 100% 100%;
+  }
+  25% {
+    background-position: 10% 15%, 85% 20%, 15% 80%, 85% 85%;
+  }
+  50% {
+    background-position: 20% 5%, 90% 10%, 5% 90%, 90% 75%;
+  }
+  75% {
+    background-position: 5% 20%, 80% 5%, 20% 75%, 75% 90%;
+  }
+}
+
+@utility bg-scanline {
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    hsl(var(--primary) / 0.08) 45%,
+    hsl(var(--accent-2) / 0.1) 50%,
+    hsl(var(--primary) / 0.08) 55%,
+    transparent 70%
+  );
+  background-size: 300% 300%;
+  animation: scanline-sweep 14s ease-in-out infinite;
+}
+
+@keyframes scanline-sweep {
+  0%,
+  100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+}
+
+@utility marquee-row {
+  display: flex;
+  width: max-content;
+  gap: 0.75rem;
+  animation: marquee-left 32s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@utility marquee-row-reverse {
+  display: flex;
+  width: max-content;
+  gap: 0.75rem;
+  animation: marquee-right 36s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+@utility marquee-mask {
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
+
+@keyframes marquee-left {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
 }
 
 #root {
