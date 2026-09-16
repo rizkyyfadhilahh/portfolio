@@ -141,11 +141,7 @@ export const ProjectsCarousel = () => {
             {i === index && (
               <Motion.div
                 layoutId="carousel-dot"
-                className="absolute inset-0 rounded-full"
-                style={{
-                  backgroundImage:
-                    "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent-2)))",
-                }}
+                className="absolute inset-0 rounded-full bg-primary"
               />
             )}
           </button>

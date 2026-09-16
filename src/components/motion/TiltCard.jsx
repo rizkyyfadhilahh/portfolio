@@ -7,15 +7,15 @@ export const TiltCard = ({ children, className = "" }) => {
   const rotateY = useSpring(0, { stiffness: 300, damping: 25 });
   const mouseX = useMotionValue(50);
   const mouseY = useMotionValue(50);
-  const spotlight = useMotionTemplate`radial-gradient(280px circle at ${mouseX}% ${mouseY}%, hsl(var(--primary) / 0.15), transparent 70%)`;
+  const spotlight = useMotionTemplate`radial-gradient(280px circle at ${mouseX}% ${mouseY}%, hsl(var(--primary) / 0.08), transparent 70%)`;
 
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const px = (e.clientX - rect.left) / rect.width;
     const py = (e.clientY - rect.top) / rect.height;
 
-    rotateY.set((px - 0.5) * 14);
-    rotateX.set((0.5 - py) * 14);
+    rotateY.set((px - 0.5) * 6);
+    rotateX.set((0.5 - py) * 6);
     mouseX.set(px * 100);
     mouseY.set(py * 100);
   };

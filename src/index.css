@@ -18,45 +18,46 @@
   --color-card-foreground: hsl(var(--foreground));
 
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
   :root {
-    --background: 220 30% 98%;
-    --foreground: 222 47% 9%;
+    --background: 40 20% 98%;
+    --foreground: 20 10% 10%;
 
-    --muted-foreground: 222 15% 40%;
+    --muted-foreground: 20 6% 42%;
 
     --card: 0 0% 100%;
 
-    --secondary: 220 20% 94%;
-    --secondary-foreground: 222 47% 9%;
+    --secondary: 40 14% 95%;
+    --secondary-foreground: 20 10% 10%;
 
-    --primary: 221 83% 53%;
+    --primary: 38 48% 40%;
     --primary-foreground: 0 0% 100%;
-    --accent-2: 262 83% 58%;
+    --accent-2: 38 30% 55%;
 
-    --border: 220 20% 88%;
-    --input: 220 20% 84%;
+    --border: 30 14% 89%;
+    --input: 30 14% 85%;
   }
 
   .dark {
-    --background: 230 35% 6%;
-    --foreground: 220 20% 96%;
+    --background: 20 10% 6%;
+    --foreground: 40 18% 95%;
 
-    --muted-foreground: 220 10% 65%;
+    --muted-foreground: 30 8% 62%;
 
-    --card: 230 28% 11%;
+    --card: 20 9% 9%;
 
-    --secondary: 230 20% 15%;
-    --secondary-foreground: 220 20% 96%;
+    --secondary: 20 9% 13%;
+    --secondary-foreground: 40 18% 95%;
 
-    --primary: 199 89% 60%;
-    --primary-foreground: 0 0% 100%;
-    --accent-2: 262 83% 68%;
+    --primary: 40 58% 58%;
+    --primary-foreground: 20 10% 8%;
+    --accent-2: 40 30% 60%;
 
-    --border: 230 15% 22%;
-    --input: 230 15% 26%;
+    --border: 20 8% 18%;
+    --input: 20 8% 22%;
   }
 
   * {
@@ -68,7 +69,7 @@
   }
 
   body {
-    @apply text-foreground transition-colors duration-300;
+    @apply text-foreground transition-colors duration-300 font-sans;
     font-feature-settings: "rlig" 1, "calt" 1;
     background-color: hsl(var(--background));
   }
@@ -96,11 +97,15 @@
 }
 
 @utility card-hover {
-  @apply transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_0_30px_-8px_hsl(var(--primary)/0.35)];
+  @apply transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/40;
+
+  &:hover {
+    box-shadow: 0 20px 45px -28px hsl(var(--primary) / 0.35);
+  }
 }
 
 @utility glass {
-  @apply bg-card/60 backdrop-blur-xl border border-border/60;
+  @apply bg-card border border-border;
 }
 
 @utility section-label {
@@ -108,150 +113,35 @@
 }
 
 @utility gradient-text {
-  @apply bg-clip-text text-transparent;
-  background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent-2)));
-}
-
-@utility gradient-text-live {
-  @apply bg-clip-text text-transparent;
-  background-image: linear-gradient(
-    90deg,
-    hsl(var(--primary)),
-    hsl(var(--accent-2)),
-    hsl(var(--primary))
-  );
-  background-size: 200% auto;
-  animation: gradient-shimmer 6s ease-in-out infinite;
-}
-
-@keyframes gradient-shimmer {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+  color: hsl(var(--primary));
 }
 
 @utility btn-primary {
-  @apply px-6 py-3 rounded-lg text-primary-foreground font-medium
-         transition-all duration-300 hover:brightness-110 hover:-translate-y-0.5
+  @apply px-6 py-3 rounded-md bg-foreground text-background font-medium
+         transition-all duration-300 hover:opacity-85 hover:-translate-y-0.5
          active:scale-[0.98] active:translate-y-0;
-  background-image: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent-2)));
-  box-shadow: 0 8px 24px -8px hsl(var(--primary) / 0.5);
 }
 
 @utility btn-outline {
-  @apply px-6 py-3 rounded-lg border border-border text-foreground font-medium
-         transition-all duration-300 hover:border-primary hover:text-primary
-         hover:shadow-[0_0_24px_-6px_hsl(var(--primary)/0.4)] active:scale-[0.98];
+  @apply px-6 py-3 rounded-md border border-border text-foreground font-medium
+         transition-all duration-300 hover:border-foreground active:scale-[0.98];
 }
 
-@utility bg-grid {
-  background-image: linear-gradient(hsl(var(--primary) / 0.14) 1px, transparent 1px),
-    linear-gradient(90deg, hsl(var(--primary) / 0.14) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 25%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, black 25%, transparent 100%);
+@utility ambient-glow {
+  background-image: radial-gradient(
+    ellipse 60% 45% at 50% 0%,
+    hsl(var(--primary) / 0.09),
+    transparent 70%
+  );
 }
 
 @utility blob {
   @apply absolute rounded-full pointer-events-none;
-  filter: blur(100px);
-}
-
-@utility bg-aurora-wash {
-  background-image: radial-gradient(38% 34% at 10% 12%, hsl(var(--primary) / 0.16), transparent 62%),
-    radial-gradient(34% 30% at 92% 8%, hsl(var(--accent-2) / 0.14), transparent 62%),
-    radial-gradient(42% 38% at 20% 92%, hsl(var(--accent-2) / 0.12), transparent 62%),
-    radial-gradient(38% 34% at 88% 88%, hsl(var(--primary) / 0.13), transparent 62%);
-  background-repeat: no-repeat;
-  background-size: 160% 160%;
-  animation: aurora-drift 26s ease-in-out infinite;
-}
-
-@keyframes aurora-drift {
-  0%,
-  100% {
-    background-position: 0% 0%, 100% 0%, 0% 100%, 100% 100%;
-  }
-  25% {
-    background-position: 10% 15%, 85% 20%, 15% 80%, 85% 85%;
-  }
-  50% {
-    background-position: 20% 5%, 90% 10%, 5% 90%, 90% 75%;
-  }
-  75% {
-    background-position: 5% 20%, 80% 5%, 20% 75%, 75% 90%;
-  }
-}
-
-@utility bg-scanline {
-  background: linear-gradient(
-    115deg,
-    transparent 30%,
-    hsl(var(--primary) / 0.08) 45%,
-    hsl(var(--accent-2) / 0.1) 50%,
-    hsl(var(--primary) / 0.08) 55%,
-    transparent 70%
-  );
-  background-size: 300% 300%;
-  animation: scanline-sweep 14s ease-in-out infinite;
-}
-
-@keyframes scanline-sweep {
-  0%,
-  100% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-}
-
-@utility marquee-row {
-  display: flex;
-  width: max-content;
-  gap: 0.75rem;
-  animation: marquee-left 32s linear infinite;
-
-  &:hover {
-    animation-play-state: paused;
-  }
-}
-
-@utility marquee-row-reverse {
-  display: flex;
-  width: max-content;
-  gap: 0.75rem;
-  animation: marquee-right 36s linear infinite;
-
-  &:hover {
-    animation-play-state: paused;
-  }
-}
-
-@utility marquee-mask {
-  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
-}
-
-@keyframes marquee-left {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes marquee-right {
-  from {
-    transform: translateX(-50%);
-  }
+  filter: blur(120px);
 }
 
 #root {
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
-  text-align: center;
 }

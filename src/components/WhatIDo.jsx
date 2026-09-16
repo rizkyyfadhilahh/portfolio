@@ -1,6 +1,5 @@
 import { BrainCircuit, BarChartBig, Database, Layout } from "lucide-react";
 import { Link } from "react-router-dom";
-import { motion as Motion } from "framer-motion";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/motion/Reveal";
 
 const focusAreas = [
@@ -27,26 +26,17 @@ export const WhatIDo = () => {
         </Reveal>
 
         <StaggerContainer className="flex flex-wrap justify-center gap-4 mb-10">
-          {focusAreas.map((area, i) => {
+          {focusAreas.map((area) => {
             const Icon = area.icon;
             return (
-              <StaggerItem key={area.title}>
-                <Motion.div
-                  className="glass flex items-center gap-2 px-4 py-2.5 rounded-full"
-                  animate={{ y: [0, -8, 0] }}
-                  transition={{
-                    duration: 4 + (i % 3),
-                    delay: i * 0.3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
-                  whileHover={{ scale: 1.06 }}
-                >
-                  <Icon className="h-4 w-4 text-primary" />
-                  <span className="text-sm text-muted-foreground">
-                    {area.title}
-                  </span>
-                </Motion.div>
+              <StaggerItem
+                key={area.title}
+                className="glass flex items-center gap-2 px-4 py-2.5 rounded-full"
+              >
+                <Icon className="h-4 w-4 text-primary" />
+                <span className="text-sm text-muted-foreground">
+                  {area.title}
+                </span>
               </StaggerItem>
             );
           })}

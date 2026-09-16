@@ -3,7 +3,6 @@ import { cn } from "@/lib/utils";
 import { CORE_THRESHOLD, skillGroups } from "@/data/skills";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/motion/Reveal";
 import { TiltCard } from "@/components/motion/TiltCard";
-import { SkillsMarquee } from "@/components/SkillsMarquee";
 
 const pillContainerVariants = {
   hidden: {},
@@ -25,10 +24,6 @@ export const SkillsSection = () => {
           <p className="text-muted-foreground mb-10 max-w-xl mx-auto">
             Highlighted skills are the ones I use daily and go deepest on.
           </p>
-        </Reveal>
-
-        <Reveal delay={0.1}>
-          <SkillsMarquee />
         </Reveal>
 
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6">
