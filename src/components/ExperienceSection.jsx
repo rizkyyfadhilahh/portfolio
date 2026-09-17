@@ -82,7 +82,7 @@ const TimelineGroup = ({ label, items }) => {
                           {rotation.period}
                         </span>
                       </div>
-                      {rotation.bullets.length > 0 ? (
+                      {rotation.bullets.length > 0 && (
                         <ul className="space-y-1 mt-1">
                           {rotation.bullets.map((bullet, j) => (
                             <li
@@ -93,29 +93,23 @@ const TimelineGroup = ({ label, items }) => {
                             </li>
                           ))}
                         </ul>
-                      ) : (
-                        <p className="text-muted-foreground/60 text-xs italic border border-dashed border-border rounded-md px-3 py-1.5 mt-1.5">
-                          Details coming soon — write-up in progress to keep every claim accurate.
-                        </p>
                       )}
                     </div>
                   ))}
                 </div>
-              ) : item.bullets.length > 0 ? (
-                <ul className="space-y-1.5">
-                  {item.bullets.map((bullet, i) => (
-                    <li
-                      key={i}
-                      className="text-muted-foreground text-sm pl-4 relative before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-primary/50"
-                    >
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
               ) : (
-                <p className="text-muted-foreground/60 text-sm italic border border-dashed border-border rounded-md px-3 py-2">
-                  Details coming soon — write-up in progress to keep every claim accurate.
-                </p>
+                item.bullets.length > 0 && (
+                  <ul className="space-y-1.5">
+                    {item.bullets.map((bullet, i) => (
+                      <li
+                        key={i}
+                        className="text-muted-foreground text-sm pl-4 relative before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-primary/50"
+                      >
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                )
               )}
             </Reveal>
           );

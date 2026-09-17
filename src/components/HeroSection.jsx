@@ -1,11 +1,40 @@
 import { Instagram, Linkedin, Github, Download, ArrowUpRight, ArrowDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion as Motion, useReducedMotion } from "framer-motion";
 import { StaggerContainer, StaggerItem } from "@/components/motion/Reveal";
 
 const CV_URL =
   "https://drive.google.com/file/d/1fEkscZjsG1Wjg51o6-Ege_FoCak8k0CD/view?usp=sharing";
 
+const WavyText = ({ text, className = "", startDelay = 0, reduceMotion = false }) => {
+  if (reduceMotion) {
+    return <span className={className}>{text}</span>;
+  }
+
+  return (
+  <>
+    {text.split("").map((char, i) => (
+      <Motion.span
+        key={i}
+        className={`inline-block ${className}`}
+        animate={{ y: [0, -7, 0] }}
+        transition={{
+          duration: 1.6,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: startDelay + i * 0.045,
+        }}
+      >
+        {char === " " ? " " : char}
+      </Motion.span>
+    ))}
+  </>
+  );
+};
+
 export const HeroSection = () => {
+  const reduceMotion = useReducedMotion();
+
   return (
     <section className="relative flex flex-col justify-center min-h-[calc(100vh-5rem)] px-4 pt-10 pb-20 overflow-hidden">
       <div className="container mx-auto flex-1 flex flex-col justify-center">
@@ -14,16 +43,34 @@ export const HeroSection = () => {
             Computer Science Student
           </StaggerItem>
 
-          <StaggerItem y={26}>
-            <h1 className="font-medium uppercase tracking-tight leading-[0.95] text-foreground text-[13vw] sm:text-7xl md:text-8xl lg:text-[7rem]">
+          <StaggerItem y={26} className="overflow-hidden">
+            <Motion.h1
+              className="font-medium uppercase tracking-tight leading-[0.95] text-foreground text-[13vw] sm:text-7xl md:text-8xl lg:text-[7rem]"
+              animate={
+                reduceMotion
+                  ? { x: 0, opacity: 1 }
+                  : { x: ["100vw", "0vw", "0vw", "-60vw"], opacity: [0, 1, 1, 0] }
+              }
+              transition={
+                reduceMotion
+                  ? { duration: 0.5 }
+                  : {
+                      duration: 5,
+                      times: [0, 0.25, 0.8, 1],
+                      ease: ["easeOut", "linear", "easeIn"],
+                      repeat: Infinity,
+                    }
+              }
+            >
               Rizky Fadhilah
-            </h1>
+            </Motion.h1>
           </StaggerItem>
 
           <StaggerItem y={18} className="mt-4 md:mt-6">
             <p className="font-serif text-2xl sm:text-3xl md:text-4xl text-muted-foreground">
-              <span className="italic text-primary">machine learning</span>{" "}
-              models & web products, built end-to-end.
+              <WavyText text="machine learning" className="italic text-primary" reduceMotion={reduceMotion} />
+              {" "}
+              <WavyText text="models & web products, built end-to-end." startDelay={17 * 0.045} reduceMotion={reduceMotion} />
             </p>
           </StaggerItem>
         </StaggerContainer>

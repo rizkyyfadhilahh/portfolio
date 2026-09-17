@@ -60,13 +60,18 @@ export const ProjectsCarousel = () => {
             }}
             className="glass rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2 cursor-grab active:cursor-grabbing"
           >
-            <div className="h-64 md:h-full overflow-hidden">
+            <div className="relative h-64 md:h-full overflow-hidden">
               <img
                 src={project.image}
                 alt={project.title}
                 className="w-full h-full object-cover"
                 draggable={false}
               />
+              {project.badge && (
+                <span className="absolute top-4 left-4 px-3 py-1.5 rounded-full text-xs font-semibold bg-foreground text-background shadow-sm">
+                  {project.badge}
+                </span>
+              )}
             </div>
 
             <div className="p-8 flex flex-col justify-center">

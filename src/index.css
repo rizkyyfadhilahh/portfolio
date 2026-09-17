@@ -127,6 +127,13 @@
          transition-all duration-300 hover:border-foreground active:scale-[0.98];
 }
 
+@utility bg-dot-grid {
+  background-image: radial-gradient(hsl(var(--foreground) / 0.1) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 0%, black 25%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 0%, black 25%, transparent 100%);
+}
+
 @utility ambient-glow {
   background-image: radial-gradient(
     ellipse 60% 45% at 50% 0%,

@@ -27,12 +27,17 @@ export const FeaturedWork = () => {
           {featured.map((project) => (
             <StaggerItem key={project.id} className="h-full">
               <TiltCard className="group glass rounded-lg overflow-hidden card-hover h-full">
-                <div className="h-40 overflow-hidden border-b border-border">
+                <div className="relative h-40 overflow-hidden border-b border-border">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
+                  {project.badge && (
+                    <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-xs font-medium bg-foreground text-background shadow-sm">
+                      {project.badge}
+                    </span>
+                  )}
                 </div>
 
                 <div className="p-6 flex flex-col flex-grow">
