@@ -3,7 +3,7 @@ import { AnimatePresence, motion as Motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, ExternalLink, Github } from "lucide-react";
 import { projects } from "@/data/projects";
 
-const AUTOPLAY_MS = 6000;
+const AUTOPLAY_MS = 11000;
 
 const slideVariants = {
   enter: (dir) => ({ x: dir > 0 ? 80 : -80, opacity: 0 }),

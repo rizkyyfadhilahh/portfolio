@@ -15,17 +15,28 @@ export const experienceGroups = [
           {
             period: "Sep 2026 — Present",
             title: "Generative AI (GenAI) Engineer",
-            bullets: [],
+            bullets: [
+              "Building a Generative AI solution end-to-end alongside a cross-functional team, translating stakeholder-defined requirements into a working technical solution.",
+              "Collaborate closely with teammates and business stakeholders to scope requirements, iterate on solution design, and keep outputs aligned with real operational needs.",
+            ],
           },
           {
             period: "Jul 2026 — Aug 2026",
             title: "Business Intelligence (BI) Engineer",
-            bullets: [],
+            bullets: [
+              "Built a 6-year historical reporting solution that replaced a manual process previously redone in full every year, cutting the annual turnaround from 1–2 months down to a simple data refresh.",
+              "Prepared and cleaned multi-year source data and built the ETL pipeline feeding the report, ensuring consistent, audit-ready figures across all six years.",
+              "Partnered with business stakeholders to define reporting requirements, turning a recurring manual burden into a reusable, low-maintenance reporting asset.",
+            ],
           },
           {
             period: "Feb 2026 — Jun 2026",
             title: "Blockchain Developer",
-            bullets: [],
+            bullets: [
+              "Designed and built an end-to-end Supply Chain Recommendation System that analyzes historical logistics data to support faster, more informed route-selection decisions.",
+              "Owned the full pipeline from raw historical data to a working decision-support output, translating operational route-planning pain points into data-driven recommendation logic.",
+              "Validated recommendations with supply chain stakeholders against real operational constraints before rollout.",
+            ],
           },
         ],
       },

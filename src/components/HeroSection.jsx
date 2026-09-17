@@ -20,7 +20,7 @@ const WavyText = ({ text, className = "", startDelay = 0, reduceMotion = false }
         animate={{ y: [0, -7, 0] }}
         transition={{
           duration: 1.6,
-          repeat: Infinity,
+          repeat: 2,
           ease: "easeInOut",
           delay: startDelay + i * 0.045,
         }}
@@ -40,7 +40,7 @@ export const HeroSection = () => {
       <div className="container mx-auto flex-1 flex flex-col justify-center">
         <StaggerContainer stagger={0.1}>
           <StaggerItem className="section-label mb-6">
-            Computer Science Student
+            IT Digital Intern at PT SMART Tbk
           </StaggerItem>
 
           <StaggerItem y={26} className="overflow-hidden">
@@ -49,17 +49,12 @@ export const HeroSection = () => {
               animate={
                 reduceMotion
                   ? { x: 0, opacity: 1 }
-                  : { x: ["100vw", "0vw", "0vw", "-60vw"], opacity: [0, 1, 1, 0] }
+                  : { x: ["40vw", "0vw"], opacity: [0, 1] }
               }
               transition={
                 reduceMotion
                   ? { duration: 0.5 }
-                  : {
-                      duration: 5,
-                      times: [0, 0.25, 0.8, 1],
-                      ease: ["easeOut", "linear", "easeIn"],
-                      repeat: Infinity,
-                    }
+                  : { duration: 0.9, ease: [0.16, 1, 0.3, 1] }
               }
             >
               Rizky Fadhilah
