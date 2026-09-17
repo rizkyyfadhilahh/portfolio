@@ -68,9 +68,9 @@ export const HeroSection = () => {
 
           <StaggerItem y={18} className="mt-4 md:mt-6">
             <p className="font-serif text-2xl sm:text-3xl md:text-4xl text-muted-foreground">
-              <WavyText text="machine learning" className="italic text-primary" reduceMotion={reduceMotion} />
+              <WavyText text="automation-driven" className="italic text-primary" reduceMotion={reduceMotion} />
               {" "}
-              <WavyText text="models & web products, built end-to-end." startDelay={17 * 0.045} reduceMotion={reduceMotion} />
+              <WavyText text="ML pipelines & web products, built end-to-end." startDelay={17 * 0.045} reduceMotion={reduceMotion} />
             </p>
           </StaggerItem>
         </StaggerContainer>
