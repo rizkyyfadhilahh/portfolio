@@ -1,18 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#CE9627"/>
-      <stop offset="1" stop-color="#276852"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="16" fill="url(#g)"/>
-  <text
-    x="32"
-    y="43"
-    font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
-    font-size="26"
-    font-weight="700"
-    fill="#ffffff"
-    text-anchor="middle"
-  >rf</text>
+  <rect width="64" height="64" rx="14" fill="#121110"/>
+  <rect x="3" y="3" width="58" height="58" rx="11" fill="none" stroke="#C9A24B" stroke-opacity="0.45" stroke-width="1"/>
+  <g transform="translate(-1.5 0)" fill="none" stroke="#D9B562" stroke-width="3" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M17 19V45"/>
+    <path d="M17 19H26A6.5 6.5 0 0 1 26 32H17"/>
+    <path d="M25 32L33 45"/>
+    <path d="M40 19V45"/>
+    <path d="M40 19H50"/>
+    <path d="M40 31H47"/>
+  </g>
+  <circle cx="51" cy="44" r="2" fill="#D9B562"/>
 </svg>

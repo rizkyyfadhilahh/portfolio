@@ -1,136 +1,167 @@
-import { useRef } from "react";
-import { Briefcase, GraduationCap, Trophy, Users } from "lucide-react";
-import { motion as Motion, useScroll } from "framer-motion";
+import { Fragment, useState } from "react";
+import { AnimatePresence, motion as Motion } from "framer-motion";
+import { Briefcase, ChevronDown, GraduationCap, Trophy, Users } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/motion/Reveal";
 import { CompanyLogo } from "@/components/CompanyLogo";
 import { experienceGroups } from "@/data/experience";
 
-const icons = {
+const typeIcons = {
   work: Briefcase,
   education: GraduationCap,
   achievement: Trophy,
   leadership: Users,
 };
 
-const TimelineGroup = ({ label, items }) => {
-  const timelineRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: timelineRef,
-    offset: ["start 85%", "end 65%"],
-  });
+const BulletList = ({ bullets }) => (
+  <ul className="space-y-3">
+    {bullets.map((bullet, i) => (
+      <li
+        key={i}
+        className="relative pl-6 text-sm md:text-base leading-relaxed text-muted-foreground before:absolute before:left-0 before:text-primary/70 before:content-['—']"
+      >
+        {bullet}
+      </li>
+    ))}
+  </ul>
+);
 
+const RowMark = ({ item }) => {
+  if (item.company) {
+    return <CompanyLogo name={item.company} src={item.logo} className="h-14 w-20" />;
+  }
+  const Icon = typeIcons[item.type];
   return (
-    <div className="mb-16 last:mb-0">
-      <Reveal className="mb-8">
-        <h3 className="text-sm font-mono uppercase tracking-[0.2em] text-primary/80">
-          {label}
-        </h3>
-      </Reveal>
-
-      <div ref={timelineRef} className="relative space-y-10">
-        <div className="absolute left-[19px] top-2 bottom-2 w-px bg-border" />
-        <Motion.div
-          className="absolute left-[19px] top-2 w-px bg-primary origin-top"
-          style={{ scaleY: scrollYProgress, height: "calc(100% - 1rem)" }}
-        />
-
-        {items.map((item, key) => {
-          const Icon = icons[item.type];
-          return (
-            <Reveal
-              key={key}
-              delay={key * 0.06}
-              y={20}
-              className={`relative text-left ${item.company ? "pl-20" : "pl-14"}`}
-            >
-              <Motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{
-                  type: "spring",
-                  stiffness: 260,
-                  damping: 20,
-                  delay: key * 0.06,
-                }}
-                className="absolute left-0 top-0"
-              >
-                {item.company ? (
-                  <CompanyLogo name={item.company} src={item.logo} />
-                ) : (
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full glass">
-                    <Icon className="h-4 w-4 text-primary" />
-                  </div>
-                )}
-              </Motion.div>
-
-              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                <h4 className="font-semibold text-lg">{item.title}</h4>
-                <span className="text-xs uppercase tracking-wider text-muted-foreground whitespace-nowrap">
-                  {item.period}
-                </span>
-              </div>
-              <p className="text-sm text-primary mb-3">{item.org}</p>
-
-              {item.rotations ? (
-                <div className="space-y-4 border-l border-border pl-4">
-                  {item.rotations.map((rotation, i) => (
-                    <div key={i}>
-                      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-0.5">
-                        <h5 className="font-medium text-sm">{rotation.title}</h5>
-                        <span className="text-[11px] uppercase tracking-wider text-muted-foreground whitespace-nowrap">
-                          {rotation.period}
-                        </span>
-                      </div>
-                      {rotation.bullets.length > 0 && (
-                        <ul className="space-y-1 mt-1">
-                          {rotation.bullets.map((bullet, j) => (
-                            <li
-                              key={j}
-                              className="text-muted-foreground text-sm pl-4 relative before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-primary/50"
-                            >
-                              {bullet}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                item.bullets.length > 0 && (
-                  <ul className="space-y-1.5">
-                    {item.bullets.map((bullet, i) => (
-                      <li
-                        key={i}
-                        className="text-muted-foreground text-sm pl-4 relative before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-primary/50"
-                      >
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
-                )
-              )}
-            </Reveal>
-          );
-        })}
-      </div>
-    </div>
+    <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-border text-muted-foreground">
+      <Icon className="h-5 w-5" />
+    </span>
   );
 };
 
 export const ExperienceSection = () => {
+  const [openId, setOpenId] = useState("0-0");
+
   return (
-    <section id="experience" className="py-24 px-4 relative bg-secondary/30">
-      <div className="container mx-auto max-w-4xl">
-        <Reveal className="text-center">
-          <p className="section-label mb-3">Journey</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-16">Experience</h2>
+    <section id="experience" className="py-24 px-4 relative">
+      <div className="container mx-auto max-w-5xl">
+        <Reveal className="mb-12 text-left">
+          <p className="section-label mb-3">Experience</p>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight">
+            Where I&apos;ve built and led
+          </h2>
         </Reveal>
 
-        {experienceGroups.map((group) => (
-          <TimelineGroup key={group.label} label={group.label} items={group.items} />
-        ))}
+        <div className="text-left space-y-16">
+          {experienceGroups.map((group, gi) => (
+            <Reveal key={group.label} delay={0.05}>
+              <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground/70 pb-3">
+                {group.label}
+              </p>
+
+              <div className="border-b border-border">
+                {group.items.map((item, ii) => {
+                  const id = `${gi}-${ii}`;
+                  const isOpen = openId === id;
+                  const hasDetail = Boolean(item.rotations) || item.bullets.length > 0;
+
+                  return (
+                    <Fragment key={id}>
+                      <div className="border-t border-border">
+                        <button
+                          type="button"
+                          onClick={() => setOpenId(isOpen ? null : id)}
+                          aria-expanded={isOpen}
+                          aria-controls={`exp-panel-${id}`}
+                          className="group flex w-full items-center justify-between gap-6 py-7 md:py-9 text-left"
+                        >
+                          <span className="min-w-0">
+                            <span
+                              className={cn(
+                                "block text-xl sm:text-2xl md:text-3xl font-light uppercase tracking-tight transition-colors duration-300",
+                                isOpen
+                                  ? "text-foreground"
+                                  : "text-foreground/70 group-hover:text-foreground"
+                              )}
+                            >
+                              {item.title}
+                            </span>
+                            <span className="mt-2 block text-sm text-muted-foreground">
+                              {item.org}
+                            </span>
+                            <span className="mt-1 block font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground/70">
+                              {item.period}
+                            </span>
+                          </span>
+
+                          <span className="flex shrink-0 items-center gap-6">
+                            <AnimatePresence initial={false}>
+                              {isOpen && (
+                                <Motion.span
+                                  key="mark"
+                                  initial={{ opacity: 0, x: 8 }}
+                                  animate={{ opacity: 1, x: 0 }}
+                                  exit={{ opacity: 0, x: 8 }}
+                                  transition={{ duration: 0.25 }}
+                                  className="hidden sm:inline-flex"
+                                >
+                                  <RowMark item={item} />
+                                </Motion.span>
+                              )}
+                            </AnimatePresence>
+                            <ChevronDown
+                              className={cn(
+                                "h-5 w-5 text-foreground transition-transform duration-300",
+                                isOpen && "rotate-180"
+                              )}
+                            />
+                          </span>
+                        </button>
+
+                        <AnimatePresence initial={false}>
+                          {isOpen && (
+                            <Motion.div
+                              id={`exp-panel-${id}`}
+                              key="panel"
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                              className="overflow-hidden"
+                            >
+                              <div className="max-w-3xl pb-10 md:pb-12">
+                                {item.rotations ? (
+                                  <div className="space-y-10 border-l border-border pl-6">
+                                    {item.rotations.map((rotation) => (
+                                      <div key={rotation.title}>
+                                        <div className="mb-3 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                                          <h4 className="text-sm font-medium uppercase tracking-wider text-foreground">
+                                            {rotation.title}
+                                          </h4>
+                                          <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground/70">
+                                            {rotation.period}
+                                          </span>
+                                        </div>
+                                        {rotation.bullets.length > 0 && (
+                                          <BulletList bullets={rotation.bullets} />
+                                        )}
+                                      </div>
+                                    ))}
+                                  </div>
+                                ) : hasDetail ? (
+                                  <BulletList bullets={item.bullets} />
+                                ) : null}
+                              </div>
+                            </Motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    </Fragment>
+                  );
+                })}
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );

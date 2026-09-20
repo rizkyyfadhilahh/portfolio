@@ -72,6 +72,8 @@ export const experienceGroups = [
         period: "Sep 2024 — Oct 2025",
         title: "Human Resources Development Staff",
         org: "Bina Nusantara Computer Club (BNCC)",
+        company: "BNCC",
+        logo: "/photo/logo/bncc-logo.jpg",
         bullets: [
           "Managed the end-to-end member development lifecycle for 60+ members, planning and executing 5 technical and soft-skill programs — including AI Training and Figma workshops — with 90%+ satisfaction ratings.",
           "Established a data-driven feedback mechanism to refine program design and pioneered 2 cross-university benchmarking initiatives.",
@@ -82,6 +84,8 @@ export const experienceGroups = [
         period: "Oct 2023 — Sep 2024",
         title: "Human Resources Development Activist",
         org: "Bina Nusantara Computer Club (BNCC)",
+        company: "BNCC",
+        logo: "/photo/logo/bncc-logo.jpg",
         bullets: [
           "Co-designed technical programs across study tracks, reconciling conflicting priorities through structured listening sessions and rapid prototyping before full rollout.",
         ],
@@ -91,6 +95,8 @@ export const experienceGroups = [
         period: "Aug 2024 — Sep 2025",
         title: "Freshmen Partner & Freshmen Leader",
         org: "Bina Nusantara University",
+        company: "BINUS",
+        logo: "/photo/logo/binus-logo.png",
         bullets: [
           "Mentored 60 new students through orientation within a 6-leader team, delivered year-long academic mentorship to 10 students, and guided a mentee team through a community-based humanitarian project.",
         ],
@@ -105,6 +111,8 @@ export const experienceGroups = [
         period: "Sep 2023 — Expected 2027",
         title: "Bachelor of Computer Science, Intelligent Systems",
         org: "Bina Nusantara University (BINUS) · Jakarta, Indonesia",
+        company: "BINUS",
+        logo: "/photo/logo/binus-logo.png",
         bullets: [
           "Selected for the BINUS Enrichment Internship Track, a competitive 12-month full-time industry placement at Sinar Mas Agro Resources and Technology.",
           "Currently completing an undergraduate thesis in the Intelligent Systems specialization as part of final-year requirements.",

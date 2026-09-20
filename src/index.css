@@ -127,6 +127,15 @@
          transition-all duration-300 hover:border-foreground active:scale-[0.98];
 }
 
+@keyframes progress-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
 @utility bg-dot-grid {
   background-image: radial-gradient(hsl(var(--foreground) / 0.1) 1px, transparent 1px);
   background-size: 28px 28px;
