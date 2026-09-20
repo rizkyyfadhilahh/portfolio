@@ -28,7 +28,14 @@ const BulletList = ({ bullets }) => (
 
 const RowMark = ({ item }) => {
   if (item.company) {
-    return <CompanyLogo name={item.company} src={item.logo} className="h-14 w-20" />;
+    return (
+      <CompanyLogo
+        name={item.company}
+        src={item.logo}
+        tone={item.logoTone}
+        className="h-14 w-20"
+      />
+    );
   }
   const Icon = typeIcons[item.type];
   return (
@@ -137,9 +144,11 @@ export const ExperienceSection = () => {
                                           <h4 className="text-sm font-medium uppercase tracking-wider text-foreground">
                                             {rotation.title}
                                           </h4>
-                                          <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground/70">
-                                            {rotation.period}
-                                          </span>
+                                          {rotation.period && (
+                                            <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground/70">
+                                              {rotation.period}
+                                            </span>
+                                          )}
                                         </div>
                                         {rotation.bullets.length > 0 && (
                                           <BulletList bullets={rotation.bullets} />

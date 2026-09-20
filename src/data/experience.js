@@ -42,6 +42,39 @@ export const experienceGroups = [
       },
       {
         type: "work",
+        period: "Jun 2026 — Present",
+        title: "Freelance",
+        org: "Full-Stack Development, Automation & Data Projects",
+        bullets: [],
+        rotations: [
+          {
+            title: "Full-Stack Web Developer",
+            bullets: [
+              "Designed, built, and deployed web applications end-to-end for clients, from requirements and interface design to backend APIs and database structure.",
+              "Delivered responsive, maintainable products with React and TypeScript, backed by REST APIs and relational databases.",
+              "Worked directly with clients to turn business needs into scoped features, iterating on feedback through to final hand-over.",
+            ],
+          },
+          {
+            title: "Automation Workflow",
+            bullets: [
+              "Built automation workflows that connect business tools and remove repetitive manual work, using n8n and Microsoft Power Automate.",
+              "Developed projects that apply Generative AI and large language models to real business use cases, pairing LLM capabilities with automated workflows to reduce manual effort.",
+              "Documented each workflow and handed it over so clients can run and maintain it independently.",
+            ],
+          },
+          {
+            title: "Financial Data Recording & Dashboarding",
+            bullets: [
+              "Set up a structured process for recording and collecting a company's financial data, replacing scattered manual records with a single, consistent source.",
+              "Cleaned and prepared the data, then built dashboards that give management a clear, up-to-date view of the company's financial position.",
+              "Took the initiative to build a web portal where the customer can view their reports on their own, with data that refreshes automatically — replacing the routine of requesting the latest figures each time with an always up-to-date view.",
+            ],
+          },
+        ],
+      },
+      {
+        type: "work",
         period: "Nov 2024 — Feb 2025",
         title: "Technology Project Member Mentor",
         org: "Bina Nusantara Computer Club (BNCC)",
@@ -62,6 +95,9 @@ export const experienceGroups = [
         period: "May 2025 — Present",
         title: "Founder & Community Leader",
         org: "Mari Kita Longrun Running Community",
+        company: "Mari Kita Longrun",
+        logo: "/photo/logo/mari-kita-longrun-logo.png",
+        logoTone: "dark",
         bullets: [
           "Founded and scaled a running community to 900+ members within 5 months by running weekly member listening sessions and designing activities directly from that feedback.",
           "Executed a data-driven digital marketing strategy across Instagram and TikTok, generating 170,000+ monthly profile views, and implemented a retention strategy and financial tracking system for long-term sustainability.",
@@ -114,8 +150,12 @@ export const experienceGroups = [
         company: "BINUS",
         logo: "/photo/logo/binus-logo.png",
         bullets: [
+          "Chose the Intelligent Systems specialization to go deep on artificial intelligence — machine learning, deep learning, NLP, and computer vision — while keeping a strong software engineering foundation.",
+          "Maintained a 3.78 GPA through semester 6, on track to graduate in 3.5 years (expected 2027).",
+          "Studies focus on software engineering and AI, put into practice through many hands-on projects: machine learning models, national competition entries, and full-stack and mobile applications.",
+          "Actively competes in competitions across web development, UI/UX, IoT, and — most often — data science, using each one to sharpen technical depth and teamwork under real deadlines.",
           "Selected for the BINUS Enrichment Internship Track, a competitive 12-month full-time industry placement at Sinar Mas Agro Resources and Technology.",
-          "Currently completing an undergraduate thesis in the Intelligent Systems specialization as part of final-year requirements.",
+          "Currently writing a research paper as the graduation requirement while completing the full-time internship.",
         ],
       },
       {

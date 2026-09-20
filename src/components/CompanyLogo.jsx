@@ -6,14 +6,14 @@ const getInitials = (name = "") => {
   return (words[0][0] + words[1][0]).toUpperCase();
 };
 
-export const CompanyLogo = ({ name, src, className = "h-14 w-14" }) => {
+export const CompanyLogo = ({ name, src, tone = "light", className = "h-14 w-14" }) => {
   const [errored, setErrored] = useState(false);
   const showImage = Boolean(src) && !errored;
 
   return (
     <div
       className={`flex items-center justify-center rounded-xl overflow-hidden shrink-0 border border-border/60 ${
-        showImage ? "bg-white" : "glass"
+        showImage ? (tone === "dark" ? "bg-neutral-900" : "bg-white") : "glass"
       } ${className}`}
     >
       {showImage ? (
