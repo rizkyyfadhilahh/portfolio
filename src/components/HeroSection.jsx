@@ -4,7 +4,7 @@ import { motion as Motion, useReducedMotion } from "framer-motion";
 import { StaggerContainer, StaggerItem } from "@/components/motion/Reveal";
 
 const CV_URL =
-  "https://drive.google.com/file/d/1fEkscZjsG1Wjg51o6-Ege_FoCak8k0CD/view?usp=sharing";
+  "/Rizky-Fadhilah-CV.pdf";
 
 const WavyText = ({ text, className = "", startDelay = 0, reduceMotion = false }) => {
   if (reduceMotion) {

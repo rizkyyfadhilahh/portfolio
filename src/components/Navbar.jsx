@@ -14,7 +14,7 @@ const navItems = [
 ];
 
 const CV_URL =
-  "https://drive.google.com/file/d/1fEkscZjsG1Wjg51o6-Ege_FoCak8k0CD/view?usp=sharing";
+  "/Rizky-Fadhilah-CV.pdf";
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion as Motion } from "framer-motion";
 
 const CV_URL =
-  "https://drive.google.com/file/d/1fEkscZjsG1Wjg51o6-Ege_FoCak8k0CD/view?usp=sharing";
+  "/Rizky-Fadhilah-CV.pdf";
 const ease = [0.22, 1, 0.36, 1];
 
 const focusAreas = [

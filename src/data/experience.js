@@ -33,7 +33,8 @@ export const experienceGroups = [
             period: "Feb 2026 — Jun 2026",
             title: "Blockchain Developer",
             bullets: [
-              "Designed and built an end-to-end Supply Chain Recommendation System that analyzes historical logistics data to support faster, more informed route-selection decisions.",
+              "Worked on SmartTrace, the company's blockchain-based traceability platform that traces processed palm products back to their source — mill, estate, and harvest shipment records — across the supply chain.",
+              "Built an end-to-end Supply Chain Recommendation System on top of that traceability data, sourced from SAP into PostgreSQL, to support faster and better-informed route-selection decisions.",
               "Owned the full pipeline from raw historical data to a working decision-support output, translating operational route-planning pain points into data-driven recommendation logic.",
               "Validated recommendations with supply chain stakeholders against real operational constraints before rollout.",
             ],
