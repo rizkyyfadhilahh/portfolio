@@ -1,8 +1,8 @@
 export const projects = [
   {
     id: 7,
-    title: "JobPilot: Truthful AI Job-Search Copilot",
-    description: "Job seekers in Indonesia and Malaysia lose hours every week checking career pages, rewriting the same CV and screening scam postings, while most AI resume tools invent achievements or lock users into paid APIs. JobPilot watches official employer job boards, scores every opening 0-100 against what you have actually done, builds a tailored CV and interview cheat-sheet, and tracks each application through to the offer. Tailoring is extractive and a validator blocks any number, skill or claim that cannot be traced back to your CV. It runs at $0 inference cost on deterministic rules, supports Bahasa and English, flags local scam patterns, and never sends anything without your approval.",
+    title: "JobPilot: Job-Search Copilot for the Indonesian Market",
+    description: "Job seekers in Indonesia spend hours every week checking company career pages one by one, rewriting their CV for each role and screening out fake postings. JobPilot automates that repetitive work. Upload your CV once, and it monitors official employer job boards, scores every opening against your real experience, prepares a tailored CV and interview cheat-sheet, and tracks each application through to the offer. Every claim on the CV is traced back to the user's own data, so nothing is invented, and nothing is submitted without approval. It currently focuses on the Indonesian job market and is under active development.",
     badge: "In progress",
     status: "wip",
     image: "/photo/jobpilot.png",

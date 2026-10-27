@@ -1,16 +1,16 @@
 export const projectDetails = {
   7: {
-    tagline: "The job-search copilot that does the tedious work and refuses to lie for you.",
+    tagline: "A job-search copilot that handles the repetitive work and never invents anything on your CV.",
     problem:
-      "Job seekers in Indonesia and Malaysia spend hours every week checking a dozen career pages, rewriting the same CV for each role, spotting scam postings and preparing for interviews from scattered notes. AI resume tools either invent achievements or bill you for every API call.",
+      "Job seekers in Indonesia spend hours every week checking career pages one by one, rewriting the same CV for each role, screening out fake postings and preparing for interviews from scattered notes. Existing AI resume tools tend to invent achievements or burden users with API costs.",
     solution:
-      "Upload your CV once. JobPilot watches official employer job boards, scores every opening against what you have actually done, builds a truthful tailored CV and interview cheat-sheet for roles worth your time, and tracks each application through to the offer.",
+      "Upload your CV once. JobPilot monitors official employer job boards, scores each opening against your real experience, prepares a tailored CV and interview cheat-sheet for the openings worth pursuing, and tracks every application through to the offer.",
     features: [
-      "Truthful by construction: tailoring only selects and reorders facts from your confirmed CV, and a validator blocks any number, entity or skill it cannot trace back to you.",
-      "Explainable matching: each opening gets a 0-100 score broken down into skills, level and location, with matched keywords and gaps.",
-      "Approve-first control: auto-apply is opt-in, capped, rate-limited and guarded by a kill switch checked before every browser action.",
-      "Built for the region: Bahasa and English CVs and job ads, Rupiah and Ringgit salaries, PPh 21 and BPJS take-home pay, and local scam patterns such as registration fees and WhatsApp-only recruiters.",
-      "$0 inference cost: parsing, scoring, tailoring and interview prep run on deterministic rules; the optional LLM gateway ships off.",
+      "Truthful by design: tailoring only selects and reorders facts from your confirmed CV, and a validator blocks any number, entity or skill that cannot be traced back to your data.",
+      "Explainable match score: a 0-100 score broken down into skills, level and location, with matched keywords and the gaps to close.",
+      "You stay in control: every application needs your approval. Auto-apply is opt-in, capped, rate-limited and guarded by a kill switch checked before each browser action.",
+      "Built for Indonesia: CVs and job ads in Bahasa Indonesia or English, salaries in Rupiah, take-home pay estimates with PPh 21 and BPJS, and detection of local scam patterns such as registration fees and WhatsApp-only recruiters.",
+      "No inference cost: parsing, scoring, tailoring and interview prep run on deterministic rules. The LLM gateway is optional and off by default.",
     ],
     techStack: [
       { group: "Backend", items: ["Python", "FastAPI", "Pytest (220+ tests)"] },
@@ -18,7 +18,7 @@ export const projectDetails = {
       { group: "Frontend", items: ["Installable PWA", "Vanilla JS"] },
       { group: "Infra", items: ["Docker", "Vercel", "Local-first data"] },
     ],
-    status: "Currently in progress. Core flows work end to end and the product is still being refined.",
+    status: "Under active development. Scope is Indonesia only for now; other countries are not planned yet.",
   },
   8: {
     tagline: "Anti-ticket assistant for Jakarta's ganjil-genap (odd-even plate) rule.",
