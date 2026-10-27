@@ -38,10 +38,8 @@ export const FeaturedWork = () => {
         >
           {featured.map((project, i) => (
             <StaggerItem key={project.id}>
-              <a
-                href={project.githubUrl || project.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to={`/projects/${project.id}`}
                 className="group block"
               >
                 <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-border bg-secondary">
@@ -77,7 +75,7 @@ export const FeaturedWork = () => {
                 <span className="relative mt-5 block h-px w-full overflow-hidden bg-border">
                   <span className="absolute inset-0 origin-left scale-x-0 bg-primary transition-transform duration-500 group-hover:scale-x-100" />
                 </span>
-              </a>
+              </Link>
             </StaggerItem>
           ))}
         </StaggerContainer>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { AnimatePresence, motion as Motion, useReducedMotion } from "framer-motion";
 import { ArrowLeft, ArrowRight, ArrowUpRight, ExternalLink, Github, Lock, Trophy } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -137,7 +138,9 @@ export const ProjectsShowcase = () => {
                   variants={itemVariants}
                   className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tight leading-[1.1] text-foreground"
                 >
-                  {project.title}
+                  <Link to={`/projects/${project.id}`} className="transition-colors hover:text-primary">
+                    {project.title}
+                  </Link>
                 </Motion.h2>
 
                 <Motion.div variants={itemVariants} className="h-px w-16 bg-primary" />
@@ -150,12 +153,15 @@ export const ProjectsShowcase = () => {
                 </Motion.p>
 
                 <Motion.div variants={itemVariants} className="flex flex-wrap items-center gap-3 pt-2">
+                  <Link to={`/projects/${project.id}`} className="btn-primary inline-flex items-center gap-2">
+                    View details <ArrowUpRight size={16} />
+                  </Link>
                   {project.githubUrl ? (
                     <a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-primary inline-flex items-center gap-2"
+                      className="btn-outline inline-flex items-center gap-2"
                     >
                       <Github size={16} />
                       View on GitHub
@@ -171,7 +177,7 @@ export const ProjectsShowcase = () => {
                       href={project.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={project.githubUrl ? "btn-outline inline-flex items-center gap-2" : "btn-primary inline-flex items-center gap-2"}
+                      className="btn-outline inline-flex items-center gap-2"
                     >
                       Live demo <ExternalLink size={15} />
                     </a>
