@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion as Motion, useReducedMotion } from "framer-motion";
-import { ArrowLeft, ArrowRight, ArrowUpRight, ExternalLink, Github, Trophy } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, ExternalLink, Github, Lock, Trophy } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { projects } from "@/data/projects";
 
@@ -124,7 +124,7 @@ export const ProjectsShowcase = () => {
                 <Motion.div variants={itemVariants} className="flex flex-wrap items-center gap-3">
                   {project.badge && (
                     <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-                      <Trophy size={13} />
+                      {project.status === "private" ? <Lock size={13} /> : <Trophy size={13} />}
                       {stripEmoji(project.badge)}
                     </span>
                   )}
@@ -144,27 +144,34 @@ export const ProjectsShowcase = () => {
 
                 <Motion.p
                   variants={itemVariants}
-                  className="max-w-xl text-sm md:text-base leading-relaxed text-muted-foreground line-clamp-5"
+                  className="max-w-xl text-sm md:text-base leading-relaxed text-muted-foreground line-clamp-6"
                 >
                   {project.description}
                 </Motion.p>
 
                 <Motion.div variants={itemVariants} className="flex flex-wrap items-center gap-3 pt-2">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary inline-flex items-center gap-2"
-                  >
-                    <Github size={16} />
-                    View on GitHub
-                  </a>
+                  {project.githubUrl ? (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex items-center gap-2"
+                    >
+                      <Github size={16} />
+                      View on GitHub
+                    </a>
+                  ) : (
+                    <span className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs text-muted-foreground">
+                      <Lock size={14} />
+                      Source code private while in development
+                    </span>
+                  )}
                   {project.demoUrl && (
                     <a
                       href={project.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="btn-outline inline-flex items-center gap-2"
+                      className={project.githubUrl ? "btn-outline inline-flex items-center gap-2" : "btn-primary inline-flex items-center gap-2"}
                     >
                       Live demo <ExternalLink size={15} />
                     </a>

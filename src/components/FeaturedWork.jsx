@@ -1,4 +1,4 @@
-import { ArrowUpRight, Trophy } from "lucide-react";
+import { ArrowUpRight, Lock, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
 import { projects } from "@/data/projects";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/motion/Reveal";
@@ -39,7 +39,7 @@ export const FeaturedWork = () => {
           {featured.map((project, i) => (
             <StaggerItem key={project.id}>
               <a
-                href={project.githubUrl}
+                href={project.githubUrl || project.demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block"
@@ -52,7 +52,7 @@ export const FeaturedWork = () => {
                   />
                   {project.badge && (
                     <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-background/85 px-2.5 py-1 text-xs font-medium text-primary backdrop-blur">
-                      <Trophy size={12} />
+                      {project.status === "private" ? <Lock size={12} /> : <Trophy size={12} />}
                       {stripEmoji(project.badge)}
                     </span>
                   )}
