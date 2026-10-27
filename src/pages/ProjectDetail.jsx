@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, ArrowUpRight, ExternalLink, Github, Lock } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Clock, ExternalLink, Github, Lock } from "lucide-react";
 import { projects } from "@/data/projects";
 import { projectDetails } from "@/data/projectDetails";
 import { Reveal } from "@/components/motion/Reveal";
@@ -38,7 +38,7 @@ export const ProjectDetail = () => {
 
         {project.badge && (
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-            {project.status === "private" && <Lock size={13} />}
+            {project.status === "private" ? <Lock size={13} /> : <Clock size={13} />}
             {stripEmoji(project.badge)}
           </span>
         )}
@@ -60,9 +60,11 @@ export const ProjectDetail = () => {
               <Github size={16} /> View on GitHub
             </a>
           ) : (
-            <span className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs text-muted-foreground">
-              <Lock size={14} /> Source code private while in development
-            </span>
+            project.status === "private" && (
+              <span className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-xs text-muted-foreground">
+                <Lock size={14} /> Source code private while in development
+              </span>
+            )
           )}
         </div>
       </Reveal>

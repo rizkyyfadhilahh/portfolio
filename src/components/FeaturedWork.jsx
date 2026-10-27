@@ -1,4 +1,4 @@
-import { ArrowUpRight, Lock, Trophy } from "lucide-react";
+import { ArrowUpRight, Clock, Lock, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
 import { projects } from "@/data/projects";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/motion/Reveal";
@@ -50,7 +50,7 @@ export const FeaturedWork = () => {
                   />
                   {project.badge && (
                     <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-background/85 px-2.5 py-1 text-xs font-medium text-primary backdrop-blur">
-                      {project.status === "private" ? <Lock size={12} /> : <Trophy size={12} />}
+                      {project.status === "private" ? <Lock size={12} /> : project.status === "wip" ? <Clock size={12} /> : <Trophy size={12} />}
                       {stripEmoji(project.badge)}
                     </span>
                   )}

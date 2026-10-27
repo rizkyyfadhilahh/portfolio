@@ -18,7 +18,7 @@ export const projectDetails = {
       { group: "Frontend", items: ["Installable PWA", "Vanilla JS"] },
       { group: "Infra", items: ["Docker", "Vercel", "Local-first data"] },
     ],
-    status: "Hosted beta. Source code is private while the product is in development.",
+    status: "Currently in progress. Core flows work end to end and the product is still being refined.",
   },
   8: {
     tagline: "Anti-ticket assistant for Jakarta's ganjil-genap (odd-even plate) rule.",
@@ -65,7 +65,7 @@ export const projectDetails = {
       { group: "Quality", items: ["Pytest", "node:test", "axe-core"] },
       { group: "Infra", items: ["Docker", "Render"] },
     ],
-    status: "Zero-budget MVP. Source code is private while the product is in development.",
+    status: "Currently in progress as a zero-budget MVP that is being refined and expanded.",
   },
   10: {
     tagline: "Your commute is a game. Play it green.",
@@ -87,6 +87,6 @@ export const projectDetails = {
       { group: "Quality", items: ["Vitest", "ESLint", "Commitlint"] },
       { group: "Planning", items: ["PRD v2.0", "Sprint and engineering plans"] },
     ],
-    status: "Phase 0 pilot build. Source code is private while the product is in development.",
+    status: "Currently in progress, in the Phase 0 pilot build.",
   },
 };
