@@ -69,7 +69,7 @@ export const AboutSection = () => {
               className="text-5xl font-medium leading-[1.04] tracking-tight text-foreground md:text-6xl lg:text-7xl"
             >
               Focused on data,{" "}
-              <span className="font-serif italic text-primary">comfortable end-to-end.</span>
+              <span className="font-serif italic gradient-text">comfortable end-to-end.</span>
             </Motion.h1>
 
             <Motion.div variants={itemVariants} className="h-px w-16 bg-primary" />

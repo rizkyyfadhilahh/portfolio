@@ -17,8 +17,8 @@ export const WhatIDo = () => {
           <p className="section-label mb-6">What I Do</p>
           <h2 className="max-w-4xl text-4xl font-medium leading-[1.08] tracking-tight text-foreground md:text-5xl lg:text-6xl">
             Turning messy data into{" "}
-            <span className="font-serif italic text-primary">models</span> and{" "}
-            <span className="font-serif italic text-primary">products</span> people can use
+            <span className="font-serif italic gradient-text">models</span> and{" "}
+            <span className="font-serif italic gradient-text">products</span> people can use
           </h2>
         </Reveal>
 

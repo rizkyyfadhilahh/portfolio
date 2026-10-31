@@ -26,8 +26,16 @@ export const BackgroundFX = () => {
       <div className="absolute inset-0 bg-dot-grid" />
       <div className="absolute inset-0 ambient-glow" />
       <Motion.div
-        className="blob top-[-14rem] left-1/2 -translate-x-1/2 h-[36rem] w-[36rem] opacity-[0.07]"
+        className="blob top-[-12rem] left-[8%] h-[34rem] w-[34rem] opacity-[0.28]"
         style={{ backgroundColor: "hsl(var(--primary))", x, y }}
+      />
+      <Motion.div
+        className="blob bottom-[-10rem] right-[-6rem] h-[30rem] w-[30rem] opacity-[0.18]"
+        style={{ backgroundColor: "hsl(var(--accent-2))", x: y, y: x }}
+      />
+      <Motion.div
+        className="blob top-[40%] left-[-10rem] h-[24rem] w-[24rem] opacity-[0.14]"
+        style={{ backgroundColor: "hsl(var(--primary))", x }}
       />
     </div>
   );

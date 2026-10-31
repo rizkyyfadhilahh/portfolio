@@ -173,7 +173,7 @@ export const ContactSection = () => {
             className="text-5xl font-medium leading-[1.02] tracking-tight text-foreground md:text-6xl lg:text-7xl"
           >
             Let&apos;s talk about{" "}
-            <span className="font-serif italic text-primary">what&apos;s next.</span>
+            <span className="font-serif italic gradient-text">what&apos;s next.</span>
           </Motion.h1>
 
           <Motion.p variants={itemVariants} className="max-w-md text-muted-foreground">

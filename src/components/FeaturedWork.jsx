@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { projects } from "@/data/projects";
 import { Reveal, StaggerContainer, StaggerItem } from "@/components/motion/Reveal";
 
+const FEATURED_IDS = [10, 1, 8];
+
 const stripEmoji = (text) => text.replace(/^\p{Extended_Pictographic}\s*/u, "");
 
 export const FeaturedWork = () => {
-  const featured = projects.slice(0, 3);
+  const featured = FEATURED_IDS.map((id) => projects.find((p) => p.id === id)).filter(Boolean);
 
   return (
     <section
@@ -18,7 +20,7 @@ export const FeaturedWork = () => {
           <div>
             <p className="section-label mb-6">Work</p>
             <h2 className="text-4xl font-medium leading-[1.08] tracking-tight text-foreground md:text-5xl lg:text-6xl">
-              Selected <span className="font-serif italic text-primary">work</span>
+              Selected <span className="font-serif italic gradient-text">work</span>
             </h2>
           </div>
           <Link
