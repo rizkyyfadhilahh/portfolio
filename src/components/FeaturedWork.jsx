@@ -26,7 +26,7 @@ export const FeaturedWork = () => {
             className="btn-outline group inline-flex items-center gap-3 !rounded-full !py-2 !pl-6 !pr-2"
           >
             See all projects
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-2 text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-2 text-accent-2-foreground transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
               <ArrowUpRight size={16} />
             </span>
           </Link>
@@ -49,7 +49,7 @@ export const FeaturedWork = () => {
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   {project.badge && (
-                    <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-background/85 px-2.5 py-1 text-xs font-medium text-primary backdrop-blur">
+                    <span className="absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full border border-accent-2/60 bg-background/85 px-2.5 py-1 text-xs font-medium text-foreground backdrop-blur">
                       {project.status === "private" ? <Lock size={12} /> : project.status === "wip" ? <Clock size={12} /> : <Trophy size={12} />}
                       {stripEmoji(project.badge)}
                     </span>

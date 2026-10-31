@@ -127,7 +127,7 @@ export const HeroSection = () => {
               to="/contact"
               className="btn-outline !rounded-full pl-2 pr-6 inline-flex items-center gap-3"
             >
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-accent-2 text-white">
+              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-accent-2 text-accent-2-foreground">
                 <ArrowUpRight className="h-4 w-4" />
               </span>
               Get in touch

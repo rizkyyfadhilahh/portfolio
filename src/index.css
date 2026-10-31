@@ -10,6 +10,7 @@
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
   --color-accent-2: hsl(var(--accent-2));
+  --color-accent-2-foreground: hsl(var(--accent-2-foreground));
 
   --color-secondary: hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
@@ -22,42 +23,47 @@
 }
 
 @layer base {
+  /* Palet 3 warna: Midnight Black #02070A, Electric Blue #0297DE, Cantaloupe Orange #FC734D.
+     Lainnya hanya turunan terang/gelap dari ketiganya. */
   :root {
-    --background: 40 20% 98%;
-    --foreground: 20 10% 10%;
+    --background: 205 40% 98%;
+    --foreground: 205 67% 2%;
 
-    --muted-foreground: 20 6% 42%;
+    --muted-foreground: 205 14% 36%;
 
     --card: 0 0% 100%;
 
-    --secondary: 40 14% 95%;
-    --secondary-foreground: 20 10% 10%;
+    --secondary: 205 30% 95%;
+    --secondary-foreground: 205 67% 2%;
 
-    --primary: 38 48% 40%;
+    /* biru sedikit lebih dalam di mode terang agar teks kecil tetap terbaca */
+    --primary: 201 98% 35%;
     --primary-foreground: 0 0% 100%;
-    --accent-2: 38 30% 55%;
+    --accent-2: 12 97% 65%;
+    --accent-2-foreground: 205 67% 2%;
 
-    --border: 30 14% 89%;
-    --input: 30 14% 85%;
+    --border: 205 25% 89%;
+    --input: 205 25% 84%;
   }
 
   .dark {
-    --background: 20 10% 6%;
-    --foreground: 40 18% 95%;
+    --background: 205 67% 2%;
+    --foreground: 205 20% 96%;
 
-    --muted-foreground: 30 8% 62%;
+    --muted-foreground: 205 12% 62%;
 
-    --card: 20 9% 9%;
+    --card: 205 50% 5%;
 
-    --secondary: 20 9% 13%;
-    --secondary-foreground: 40 18% 95%;
+    --secondary: 205 40% 8%;
+    --secondary-foreground: 205 20% 96%;
 
-    --primary: 40 58% 58%;
-    --primary-foreground: 20 10% 8%;
-    --accent-2: 40 30% 60%;
+    --primary: 201 98% 44%;
+    --primary-foreground: 205 67% 2%;
+    --accent-2: 12 97% 65%;
+    --accent-2-foreground: 205 67% 2%;
 
-    --border: 20 8% 18%;
-    --input: 20 8% 22%;
+    --border: 205 30% 14%;
+    --input: 205 30% 18%;
   }
 
   * {
@@ -117,8 +123,8 @@
 }
 
 @utility btn-primary {
-  @apply px-6 py-3 rounded-md bg-foreground text-background font-medium
-         transition-all duration-300 hover:opacity-85 hover:-translate-y-0.5
+  @apply px-6 py-3 rounded-md bg-primary text-primary-foreground font-medium
+         transition-all duration-300 hover:bg-accent-2 hover:text-accent-2-foreground hover:-translate-y-0.5
          active:scale-[0.98] active:translate-y-0;
 }
 

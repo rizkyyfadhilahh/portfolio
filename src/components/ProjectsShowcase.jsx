@@ -124,7 +124,7 @@ export const ProjectsShowcase = () => {
               <div className="order-2 md:order-1 space-y-6 text-left">
                 <Motion.div variants={itemVariants} className="flex flex-wrap items-center gap-3">
                   {project.badge && (
-                    <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                    <span className="inline-flex items-center gap-2 rounded-full border border-accent-2/60 bg-accent-2/15 px-3 py-1 text-xs font-medium text-foreground">
                       {project.status === "private" ? <Lock size={13} /> : project.status === "wip" ? <Clock size={13} /> : <Trophy size={13} />}
                       {stripEmoji(project.badge)}
                     </span>

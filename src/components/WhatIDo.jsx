@@ -33,7 +33,7 @@ export const WhatIDo = () => {
             className="btn-outline group inline-flex items-center gap-3 !rounded-full !py-2 !pl-6 !pr-2"
           >
             More about me
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-2 text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent-2 text-accent-2-foreground transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
               <ArrowUpRight size={16} />
             </span>
           </Link>

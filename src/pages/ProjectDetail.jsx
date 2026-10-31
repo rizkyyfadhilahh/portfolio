@@ -37,7 +37,7 @@ export const ProjectDetail = () => {
         </Link>
 
         {project.badge && (
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+          <span className="inline-flex items-center gap-2 rounded-full border border-accent-2/60 bg-accent-2/15 px-3 py-1 text-xs font-medium text-foreground">
             {project.status === "private" ? <Lock size={13} /> : <Clock size={13} />}
             {stripEmoji(project.badge)}
           </span>
