@@ -89,4 +89,58 @@ export const projectDetails = {
     ],
     status: "Currently in progress, in the Phase 0 pilot build.",
   },
+  11: {
+    tagline: "A reference, not a decision-maker: how similar cases were sentenced, with the evidence and the limits in plain view.",
+    problem:
+      "Indonesian courts publish hundreds of thousands of decisions every quarter. At that volume, finding out how similar cases were sentenced by hand is close to impossible, so sentencing disparity (similar cases, very different sentences) stays hard to see and hard to correct. The people who need that visibility, judges, prosecutors, defense counsel and oversight bodies, are also the people who cannot afford a black box.",
+    solution:
+      "Aequa started from research I did with two teammates: a model that predicts sentence length from 23,238 noisy Indonesian court decisions and took 1st place out of 109 teams. A competition model is not a product, so I asked what a legal professional would actually need to trust it. The answer shaped everything: Aequa reads a document, anonymizes it, and returns an 80% sentence range placed among the verdicts of the closest comparable cases, with the phrases that pushed the estimate up or down highlighted in the text itself. A Knowledge Center with a cited assistant covers the articles and procedure behind each case.",
+    features: [
+      "Sentence range with evidence: upload an indictment, demand or verdict (PDF, DOCX, TXT or pasted text) and get an 80% range, a distribution plot of comparable verdicts, and the prosecutor's demand placed at its percentile.",
+      "Explanation inside the document: influential phrases are highlighted in the decision text using line pattern as well as color, so they stay readable for color-blind users and in print.",
+      "Knowledge Center assistant (RAG): answers questions about articles, elements, penalties and procedure in English or Bahasa Indonesia, only from curated sources, citing every claim with a numbered source.",
+      "Case-to-article matcher: describe the facts in plain words and see the relevant articles, which terms and elements matched, the penalty, and the equivalent article in the new Criminal Code (Law 1/2023).",
+      "Disparity analytics for oversight: regional deviation from the national median, trends with IQR bands, and the cases that differ significantly from their peers, with a table view for every chart.",
+      "Verifiable PDF reports with range, warnings, factors, comparable cases, model version, SHA-256 hash and a verification QR, plus a case workspace and audit log.",
+    ],
+    decisions: [
+      {
+        title: "A range, never a point estimate",
+        body: "A single number invites over-trust. Every estimate is an 80% interval shown next to real comparable cases and an explanation, so the judgment stays with the legal professional.",
+      },
+      {
+        title: "A classical model beat the transformer, so I shipped the classical model",
+        body: "A hybrid of word and character n-gram features with XGBoost reached a validation RMSE of 13.53 months, against 22.15 for IndoBERT embeddings. Character n-grams survive typos and merged words in noisy court text, and the model runs on CPU only, which suits public-sector infrastructure and keeps every prediction auditable.",
+      },
+      {
+        title: "Product first, behind a swappable model contract",
+        body: "The whole workflow runs end to end on a predictor interface. Today it is backed by a mock model that is labelled as a mock in the UI and in every report, so the trained pipeline can plug in without touching anything else, and nobody mistakes a demo number for a real one.",
+      },
+      {
+        title: "A grounded assistant instead of free chat",
+        body: "Retrieval is BM25 over curated articles, regulations, glossary and guides. The assistant must cite numbered sources, article numbers and penalties must come from them, and it never recommends a verdict. Without an API key it falls back to an extractive mode with no external call, and questions pass through the anonymizer first.",
+      },
+      {
+        title: "Fairness and privacy by construction",
+        body: "Names, ethnicity, religion and gender are never model inputs, identities are masked before anything is stored, and logins, uploads, analyses, exports and assistant use are audit-logged. The design follows Indonesia's Personal Data Protection Law (UU 27/2022) and is benchmarked against the EU AI Act and NIST AI RMF.",
+      },
+      {
+        title: "Honest guardrails",
+        body: "Too-short documents, out-of-distribution text, heavy-sentence tail risk, death or life sentences, juvenile cases and new-Criminal-Code documents each trigger a warning or disable the estimate, rather than producing a confident-looking number the model cannot support.",
+      },
+      {
+        title: "Built for the reader's eyes",
+        body: "A warm dark theme with no pure black or white, an optional dimmed-parchment light mode, WCAG 2.2 AA, reduced-motion support, and a one-click switch between English and Bahasa Indonesia, because this tool is used for hours at a time by people reading long documents.",
+      },
+    ],
+    techStack: [
+      { group: "Frontend", items: ["Next.js 15", "TypeScript (strict)", "Tailwind CSS v4", "Custom SVG charts"] },
+      { group: "Backend", items: ["FastAPI", "Pydantic v2", "SQLAlchemy 2", "JWT + RBAC", "PostgreSQL / SQLite"] },
+      { group: "AI and research", items: ["scikit-learn", "XGBoost", "Hybrid TF-IDF n-grams", "BM25 retrieval", "RAG with the Anthropic SDK"] },
+      { group: "Documents", items: ["pypdf", "python-docx", "ReportLab", "Anonymizer"] },
+      { group: "Quality", items: ["pytest", "ESLint", "Playwright visual QA", "WCAG 2.2 AA"] },
+    ],
+    status:
+      "Under active development. The product works end to end today with a mock sentence model and a synthetic comparable-case corpus, both labelled as such in the UI. Next: a production-grade trained pipeline with uncertainty and explainability, an official retrieval index, then a closed pilot with one or two courts or prosecutor offices.",
+  },
 };

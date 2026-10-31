@@ -98,6 +98,22 @@ export const ProjectDetail = () => {
                   ))}
                 </ul>
               </Reveal>
+              {detail.decisions && (
+                <Reveal>
+                  <p className="section-label mb-6">Design decisions</p>
+                  <ol className="space-y-6">
+                    {detail.decisions.map((d, i) => (
+                      <li key={d.title} className="flex gap-4">
+                        <span className="mt-0.5 font-mono text-xs text-accent-2">{String(i + 1).padStart(2, "0")}</span>
+                        <div>
+                          <h3 className="font-medium text-foreground">{d.title}</h3>
+                          <p className="mt-1 leading-relaxed text-muted-foreground">{d.body}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </Reveal>
+              )}
             </>
           ) : (
             <Reveal>

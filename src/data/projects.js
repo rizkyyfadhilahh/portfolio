@@ -37,6 +37,15 @@ export const projects = [
     tags: ["Next.js", "TypeScript", "Supabase", "PWA", "Gamification"],
   },
   {
+    id: 11,
+    title: "Aequa AI: Sentencing Intelligence for Consistent Justice in Indonesia",
+    description: "Indonesian courts publish hundreds of thousands of decisions every quarter, so finding out how similar cases were sentenced by hand is close to impossible, and sentencing disparity stays invisible. Aequa AI is a decision-support platform for judges, prosecutors, defense counsel and oversight bodies. It reads noisy court documents and returns an 80% sentence range next to the most similar real cases, the phrases that moved the estimate, and the limits of the model, plus a cited Knowledge Center assistant for the articles behind each case. It is built as a reference, never a decision-maker, on top of an award-winning NLP model, with guardrails, anonymization and human-in-the-loop design from day one.",
+    badge: "In progress",
+    status: "wip",
+    image: "/photo/aequa.png",
+    tags: ["Next.js", "FastAPI", "XGBoost", "RAG", "Responsible AI"],
+  },
+  {
     id: 1,
     title: "NLP based Regression-for Predicting Incarceration-Duration from Court Transcripts",
     description: "Secured 1st Place out of 109 teams in our debut national NLP competition by developing a highly efficient regression model. Our key innovation was a custom-designed hybrid TF-IDF architecture that was not only significantly more computationally and resource-efficient but also outperformed state-of-the-art models like IndoBERT in analyzing extremely noisy legal text.",
